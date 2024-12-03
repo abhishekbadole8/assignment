@@ -1,8 +1,9 @@
-import { View, Text, StyleSheet, Platform } from "react-native";
+import { View, Text, StyleSheet, Platform, Dimensions } from "react-native";
 import React from "react";
 import CustomButton from "@/components/custom-button";
 import { Colors } from "@/constants/Colors";
 import { icons } from "@/constants";
+import { LineChart } from "react-native-gifted-charts";
 
 type AnalyticsItem = {
   id: number;
@@ -11,11 +12,25 @@ type AnalyticsItem = {
   icon: any; // Icon component type
 };
 
+const { width } = Dimensions.get("window");
+
 const analytics: AnalyticsItem[] = [
   { id: 1, title: "VITALS", value: "92%", icon: icons.ArrowTrendUpWhite },
   { id: 2, title: "STRESS", value: "low", icon: icons.ArrowTrendDownWhite },
   { id: 3, title: "ENERGY", value: "high", icon: icons.ArrowTrendUpWhite },
 ];
+
+const chartData = [
+  { value: 0 },
+  { value: 10 },
+  { value: 13 },
+  { value: 13 },
+  { value: 11 },
+  { value: 33 },
+  { value: 26 },
+  { value: 40 },
+];
+const chartWidth = width - 40;
 
 const HealthScoreCard: React.FC = () => {
   return (
@@ -35,6 +50,20 @@ const HealthScoreCard: React.FC = () => {
         </View>
       </View>
 
+      <View style={styles.areaChartContainer}>
+        <LineChart
+          disableScroll
+          // parentWidth={chartWidth}
+          startOpacity={0.1}
+          endOpacity={0.2}
+          color="rgba(255, 255, 255, 0.6)"
+          areaChart
+          curved
+          hideDataPoints1
+          hideAxesAndRules
+          data={chartData}
+        />
+      </View>
       <View style={styles.analyticsContainer}>
         {analytics.map((info, index) => (
           <View
@@ -60,7 +89,6 @@ const HealthScoreCard: React.FC = () => {
         handlePress={() => {}}
         containerStyles={{ marginHorizontal: 12 }}
       />
-
       <View style={styles.fullScreenIconContainer}>
         <icons.FullScreen />
       </View>
@@ -99,6 +127,7 @@ const styles = StyleSheet.create({
     marginLeft: 24,
     marginBottom: 49,
   },
+
   titleNumber: {
     color: Colors.white,
     fontFamily: "Gilroy-Bold",
@@ -136,6 +165,19 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 16,
   },
+
+  //
+
+  areaChartContainer: {
+    position: "absolute",
+    top: 41,
+    left: 0,
+    height: 83,
+    width: "100%",
+    borderWidth:1
+  },
+
+  //
 
   // Analytics
   analyticsContainer: {
