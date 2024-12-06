@@ -118,6 +118,8 @@ const Home = () => {
           <MainHeading />
         </View>
 
+        <images.CurveImage style={styles.whiteImg} />
+
         {/* UPCOMING TASKS */}
         <UpcomingTasks />
 
@@ -139,6 +141,7 @@ const styles = StyleSheet.create({
   // For Animated Scrool
   scrollContent: {
     flexGrow: 1,
+    width: "100%",
   },
   //
 
@@ -176,6 +179,7 @@ const styles = StyleSheet.create({
   circularContainer: {
     position: "absolute",
     bottom: -29,
+    zIndex: 500,
   },
 
   // Sun Moon
@@ -199,6 +203,12 @@ const styles = StyleSheet.create({
     width: 49,
     height: 49,
     position: "absolute",
-    filter: "blur(14)",
+  },
+
+  whiteImg: {
+    position: "absolute",
+    top: 220,
+    minWidth: SCREEN_WIDTH,
+    height: 30,
   },
 });
