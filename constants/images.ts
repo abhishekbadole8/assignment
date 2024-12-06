@@ -5,6 +5,7 @@ import mainbgimg from "../assets/images/main-bg-img.png";
 import maskbg from "../assets/images/Mask group.png";
 import girl from "../assets/images/girl.png";
 import girlSleeping from "../assets/images/girl-sleeping.png";
+import CurveImage from "../assets/white-screen-svg.svg";
 
 export const images = {
   userProfile,
@@ -14,4 +15,5 @@ export const images = {
   maskbg,
   girl,
   girlSleeping,
+  CurveImage
 };

@@ -82,6 +82,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="quick-consultation"
         options={{
+          title: "Quick consultation",
           headerLeft: () => (
             <icons.QuickConsultationIcon style={styles.headerIcon} />
           ),
