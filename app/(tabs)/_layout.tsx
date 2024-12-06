@@ -11,6 +11,8 @@ import HomeIcon from "@/components/tab-bar/home-icon";
 import ClipboardIcon from "@/components/tab-bar/clipboard-icon";
 import HeartIcon from "@/components/tab-bar/heart-icon";
 import UserIcon from "@/components/tab-bar/user-icon";
+import CustomButton from "@/components/custom-button";
+import HealthInsightHeader from "@/components/health-insights/components/health-insight-header";
 
 interface ITabBar {
   icon?: any;
@@ -22,7 +24,6 @@ type IconComponent = React.FC<{
   size: number;
   focused: boolean;
 }>;
-
 
 export default function TabLayout() {
   return (
@@ -99,7 +100,7 @@ export default function TabLayout() {
           header: () => (
             <>
               <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-              <CustomHeader />
+              <CustomHeader title="Mark Maurice" />
             </>
           ),
         }}
@@ -115,7 +116,21 @@ export default function TabLayout() {
           header: () => (
             <>
               <StatusBar translucent backgroundColor="transparent" />
-              <CustomHeader />
+              {/* <CustomHeader /> */}
+            </>
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="health-insights"
+        options={{
+          tabBarIcon: ({ color, focused }) => (
+            <HeartIcon color={color} focused={focused} />
+          ),
+          header: () => (
+            <>
+              <StatusBar barStyle="dark-content" backgroundColor="#fff" />
+              <HealthInsightHeader title="Health Insights" />
             </>
           ),
         }}

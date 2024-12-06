@@ -24,7 +24,7 @@ const Insight = () => {
       {/* footer */}
       <View style={styles.insightFooter}>
         <Text style={styles.insightFooterText}>READ INSIGHTS</Text>
-        <icons.Arrow style={styles.icon} />
+        <icons.ArrowRightBlack style={styles.icon} />
       </View>
     </View>
   );
