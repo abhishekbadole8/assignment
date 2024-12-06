@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
     borderColor: "rgba(0, 0, 0, 0.5)",
     borderRadius: 12,
     overflow: "hidden",
+    marginBottom: 41,
   },
   //
   headerContainer: {
