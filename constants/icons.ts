@@ -49,6 +49,12 @@ import Brain from "../assets/icons/brain.svg";
 import Heart from "../assets/icons/heart.svg";
 import Upload from "../assets/icons/Upload.svg";
 
+// bio marker
+import BiomarkerSun from "../assets/icons/biomarker-sun.svg";
+import BiomarkerMoon from "../assets/icons/biomarker-moon.svg";
+import BiomarkerCortisol from "../assets/icons/biomarker-cortisol.svg";
+import BiomarkerHeart from "../assets/icons/biomarker-heart.svg";
+
 export const icons = {
   QuickConsultationIcon,
   Send,
@@ -99,5 +105,11 @@ export const icons = {
   Metabolism,
   Brain,
   Heart,
-  Upload
+  Upload,
+
+  // bio marker
+  BiomarkerSun,
+  BiomarkerMoon,
+  BiomarkerCortisol,
+  BiomarkerHeart,
 };
