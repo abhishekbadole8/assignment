@@ -2,6 +2,7 @@ import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import CustomButton from "@/components/custom-button";
 import { Colors } from "@/constants/Colors";
+import { router } from "expo-router";
 
 interface BioMarker {
   title: string;
@@ -55,7 +56,7 @@ const BiomarkerCard = () => {
       {/* footer */}
       <CustomButton
         title="view all Biomarkers"
-        handlePress={() => {}}
+        handlePress={() => router.push("/(screen)/view-all-biomarkers")}
         containerStyles={{ margin: 12 }}
         textStyles={Colors.white}
       />
