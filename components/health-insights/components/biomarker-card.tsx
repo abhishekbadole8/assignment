@@ -56,7 +56,7 @@ const BiomarkerCard = () => {
       {/* footer */}
       <CustomButton
         title="view all Biomarkers"
-        handlePress={() => router.push("/(screen)/view-all-biomarkers")}
+        handlePress={() => {}}
         containerStyles={{ margin: 12 }}
         textStyles={Colors.white}
       />

@@ -171,16 +171,16 @@ export interface Risk {
   details: Detail[];
 }
 
-export interface AssessedArea {
-  id: number;
+export interface IAssessedArea {
+  id: string;
   title: string;
   icon: React.FC;
   risks: Risk[];
 }
 
-export const assessedAreas: AssessedArea[] = [
+export const assessedAreasData: IAssessedArea[] = [
   {
-    id: 1,
+    id: "1",
     title: "Heart & Circulation",
     icon: icons.Heart,
     risks: [
@@ -201,7 +201,7 @@ export const assessedAreas: AssessedArea[] = [
     ],
   },
   {
-    id: 2,
+    id: "2",
     title: "Brain & Cognitive",
     icon: icons.Brain,
     risks: [
@@ -222,7 +222,7 @@ export const assessedAreas: AssessedArea[] = [
     ],
   },
   {
-    id: 3,
+    id: "3",
     title: "Metabolism",
     icon: icons.Metabolism,
     risks: [
@@ -236,7 +236,7 @@ export const assessedAreas: AssessedArea[] = [
     ],
   },
   {
-    id: 4,
+    id: "4",
     title: "Immunity",
     icon: icons.Shield,
     risks: [
