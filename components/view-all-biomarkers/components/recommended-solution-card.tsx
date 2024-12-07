@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Platform } from "react-native";
 import React from "react";
 import CustomButton from "@/components/custom-button";
 
@@ -49,6 +49,23 @@ const styles = StyleSheet.create({
     borderWidth: 0.4,
     borderColor: "rgba(0, 0, 0, 0.18)",
     marginBottom: 12,
+    overflow: "hidden",
+
+    // shadow
+    ...Platform.select({
+      ios: {
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 4.21,
+          height: 0,
+        },
+        shadowOpacity: 0.09,
+        shadowRadius: 15.77,
+      },
+      android: {
+        elevation: 4.21,
+      },
+    }),
   },
   //
   //
