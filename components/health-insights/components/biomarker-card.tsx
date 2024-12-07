@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Platform } from "react-native";
 import React from "react";
 import CustomButton from "@/components/custom-button";
 import { Colors } from "@/constants/Colors";
@@ -75,16 +75,22 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(76, 72, 195, 1)",
     marginHorizontal: 16,
     marginBottom: 18,
-    // Shadow for iOS
-    shadowColor: "rgba(76, 72, 195, 0.6)",
-    shadowOffset: {
-      width: 0,
-      height: 9,
-    },
-    shadowOpacity: 0.6,
-    shadowRadius: 10,
-    // Shadow for Android
-    elevation: 10,
+
+    // shadow
+    ...Platform.select({
+      ios: {
+        shadowColor: "rgba(76, 72, 195, 0.6)",
+        shadowOffset: {
+          width: 0,
+          height: 9,
+        },
+        shadowOpacity: 0.6,
+        shadowRadius: 12,
+      },
+      android: {
+        elevation: 9,
+      },
+    }),
   },
   // header
   biomarkerCardHeader: {
