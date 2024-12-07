@@ -12,7 +12,7 @@ const InsightCardLast = () => {
       <Text style={styles.cardEndHeading}>Explore all insights</Text>
 
       <View style={styles.cardEndIconContainer}>
-        <icons.Arrow />
+        <icons.ArrowRightBlack />
       </View>
     </View>
   );

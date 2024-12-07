@@ -155,3 +155,102 @@ export const timelineData: TimelineItem[] = [
 ];
 
 // -------------------------- analytics screen END   ------------------------------------------------------
+
+// -------------------------- Health Insight START   ------------------------------------------------------
+
+export interface Detail {
+  text: string;
+  actionText: string;
+}
+
+export interface Risk {
+  type: string;
+  text: string;
+  color: string;
+  bgColor: string;
+  details: Detail[];
+}
+
+export interface IAssessedArea {
+  id: string;
+  title: string;
+  icon: React.FC;
+  risks: Risk[];
+}
+
+export const assessedAreasData: IAssessedArea[] = [
+  {
+    id: "1",
+    title: "Heart & Circulation",
+    icon: icons.Heart,
+    risks: [
+      {
+        type: "High Risk",
+        text: "1 high risk",
+        color: "rgba(222, 65, 92, 1)",
+        bgColor: "rgba(255, 0, 42, 0.1)",
+        details: [{ text: "Chronic fatigue", actionText: "View" }],
+      },
+      {
+        type: "Moderate",
+        text: "1 moderate",
+        color: "rgba(255, 165, 31, 1)",
+        bgColor: "rgba(236, 145, 0, 0.1)",
+        details: [{ text: "Sleep quality", actionText: "View" }],
+      },
+    ],
+  },
+  {
+    id: "2",
+    title: "Brain & Cognitive",
+    icon: icons.Brain,
+    risks: [
+      {
+        type: "High Risk",
+        text: "1 high risk",
+        color: "rgba(222, 65, 92, 1)",
+        bgColor: "rgba(255, 0, 42, 0.1)",
+        details: [{ text: "Chronic fatigue", actionText: "View" }],
+      },
+      {
+        type: "Moderate",
+        text: "1 moderate",
+        color: "rgba(255, 165, 31, 1)",
+        bgColor: "rgba(236, 145, 0, 0.1)",
+        details: [{ text: "Sleep quality", actionText: "View" }],
+      },
+    ],
+  },
+  {
+    id: "3",
+    title: "Metabolism",
+    icon: icons.Metabolism,
+    risks: [
+      {
+        type: "Moderate",
+        text: "1 moderate",
+        color: "rgba(255, 165, 31, 1)",
+        bgColor: "rgba(236, 145, 0, 0.1)",
+        details: [{ text: "Sleep quality", actionText: "View" }],
+      },
+    ],
+  },
+  {
+    id: "4",
+    title: "Immunity",
+    icon: icons.Shield,
+    risks: [
+      {
+        type: "High Risk",
+        text: "1 high risk",
+        color: "rgba(222, 65, 92, 1)",
+        bgColor: "rgba(255, 0, 42, 0.1)",
+        details: [{ text: "Chronic fatigue", actionText: "View" }],
+      },
+    ],
+  },
+];
+
+// -------------------------- Health Insight END   ------------------------------------------------------
+
+//

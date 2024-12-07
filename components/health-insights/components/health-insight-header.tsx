@@ -1,28 +1,22 @@
-import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Platform,
-  Pressable,
-} from "react-native";
+import { View, Text, StyleSheet, Platform, Pressable } from "react-native";
 import { Colors } from "@/constants/Colors";
 import { icons } from "@/constants";
 import { STATUS_BAR_HEIGHT } from "@/constants/layout";
 
-const CustomHeader = ({title}:{title:string}) => {
+const HealthInsightHeader = ({ title }: { title: string }) => {
   return (
     <View style={styles.headerContainer}>
-      <Text style={styles.userName}>Mark Maurice</Text>
-      <TouchableOpacity style={styles.iconContainer} onPress={() => {}}>
-        <icons.SettingBlack />
-      </TouchableOpacity>
+      <Text style={styles.userName}>{title}</Text>
+
+      <Pressable onPress={() => {}} style={styles.button}>
+        <icons.Upload />
+        <Text style={styles.buttonText}>upload</Text>
+      </Pressable>
     </View>
   );
 };
 
-export default CustomHeader;
+export default HealthInsightHeader;
 
 const styles = StyleSheet.create({
   headerContainer: {
@@ -31,10 +25,11 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: Colors.white,
-    paddingVertical: 9,
+    paddingBottom: 8,
+    paddingTop: 1,
     paddingRight: 16,
     paddingLeft: 20,
-    
+
     ...Platform.select({
       ios: {
         shadowColor: "#000",
@@ -60,5 +55,24 @@ const styles = StyleSheet.create({
     height: 32,
   },
 
-  
+  //right
+  button: {
+    // flex: 1,
+    borderRadius: 40,
+    paddingHorizontal: 18.5,
+    paddingVertical: 8,
+    backgroundColor: "#000",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 2,
+    textAlign: "center",
+  },
+  buttonText: {
+    fontFamily: "Gilroy-Bold",
+    fontWeight: 400,
+    fontSize: 14,
+    lineHeight: 18,
+    color: "rgba(247, 247, 247, 1)",
+  },
 });

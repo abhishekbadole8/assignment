@@ -28,7 +28,7 @@ const ProfileListItem = ({
       <Text style={styles.listText}>{option.title}</Text>
 
       {/* Right Arrow Icon */}
-      <icons.Arrow style={icons.Arrow} />
+      <icons.ArrowRightBlack style={styles.arrowIcon} />
     </TouchableOpacity>
   );
 };

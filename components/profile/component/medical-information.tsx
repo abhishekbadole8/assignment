@@ -31,7 +31,7 @@ const MedicalInformation = () => {
           <Text style={styles.listText}>{item.label}</Text>
           <View style={styles.listRightCol}>
             <Text style={styles.listTextValue}>{item.value}</Text>
-            <icons.Arrow style={styles.icon} />
+            <icons.ArrowRightBlack style={styles.icon} />
           </View>
         </TouchableOpacity>
       ))}

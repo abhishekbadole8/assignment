@@ -9,7 +9,7 @@ import Plus from "@/assets/icons/plus-icon.svg";
 import Star from "@/assets/icons/star.svg";
 import Logout from "@/assets/icons/logout.svg";
 import Sms from "@/assets/icons/sms.svg";
-import Arrow from "@/assets/icons/right-arrow.svg";
+import ArrowRightBlack from "@/assets/icons/right-arrow.svg";
 import LeftArrow from "@/assets/icons/Right_Arrow.svg";
 import Battery from "@/assets/icons/battery.svg";
 import Bluetooth from "@/assets/icons/Bluetooth.svg";
@@ -41,6 +41,21 @@ import UpwardArrowBlack from "../assets/icons/Upward_Arrow_black.svg";
 import ArrowTrendUpBlack from "../assets/icons/Arrow-trend-up-black.svg";
 import Polygon from "../assets/icons/Polygon.svg";
 
+// health-insights
+import Funnel from "../assets/icons/funnel.svg";
+import Shield from "../assets/icons/shield.svg";
+import Metabolism from "../assets/icons/metabolism.svg";
+import Brain from "../assets/icons/brain.svg";
+import Heart from "../assets/icons/heart.svg";
+import Upload from "../assets/icons/Upload.svg";
+
+// bio marker
+import BiomarkerSun from "../assets/icons/biomarker-sun.svg";
+import BiomarkerMoon from "../assets/icons/biomarker-moon.svg";
+import BiomarkerCortisol from "../assets/icons/biomarker-cortisol.svg";
+import BiomarkerHeart from "../assets/icons/biomarker-heart.svg";
+import InteractionGuide from "../assets/icons/interaction-guide-icon.svg";
+
 export const icons = {
   QuickConsultationIcon,
   Send,
@@ -53,7 +68,7 @@ export const icons = {
   Star,
   Logout,
   Sms,
-  Arrow,
+  ArrowRightBlack,
   LeftArrow,
   Battery,
   Bluetooth,
@@ -83,5 +98,20 @@ export const icons = {
   DownwardArrowBlack,
   UpwardArrowBlack,
   ArrowTrendUpBlack,
-  Polygon
+  Polygon,
+
+  // health insight
+  Funnel,
+  Shield,
+  Metabolism,
+  Brain,
+  Heart,
+  Upload,
+
+  // bio marker
+  BiomarkerSun,
+  BiomarkerMoon,
+  BiomarkerCortisol,
+  BiomarkerHeart,
+  InteractionGuide
 };

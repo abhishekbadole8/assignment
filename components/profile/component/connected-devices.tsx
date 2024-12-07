@@ -48,7 +48,7 @@ const ConnectedDevices = () => {
             </View>
           </View>
 
-          <icons.Arrow style={styles.arrowIcon} />
+          <icons.ArrowRightBlack style={styles.arrowIcon} />
         </TouchableOpacity>
       ))}
     </View>
