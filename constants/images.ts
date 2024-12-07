@@ -6,6 +6,8 @@ import maskbg from "../assets/images/Mask group.png";
 import girl from "../assets/images/girl.png";
 import girlSleeping from "../assets/images/girl-sleeping.png";
 import CurveImage from "../assets/white-screen-svg.svg";
+import foodBowl from "../assets/images/food_bowl.png";
+import waterBottle from "../assets/images/water_bottle.png";
 
 export const images = {
   userProfile,
@@ -15,5 +17,7 @@ export const images = {
   maskbg,
   girl,
   girlSleeping,
-  CurveImage
+  CurveImage,
+  foodBowl,
+  waterBottle,
 };

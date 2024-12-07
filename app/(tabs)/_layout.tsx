@@ -83,12 +83,12 @@ export default function TabLayout() {
           tabBarIcon: ({ color, focused }) => (
             <ClipboardIcon color={color} focused={focused} />
           ),
-          header: () => (
-            <>
-              <StatusBar translucent backgroundColor="transparent" />
-              <CustomHeader />
-            </>
-          ),
+          // header: () => (
+          //   <>
+          //     <StatusBar translucent backgroundColor="transparent" />
+          //     {/* <CustomHeader /> */}
+          //   </>
+          // ),
         }}
       />
       {/* here clipboard */}
