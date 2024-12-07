@@ -1,4 +1,4 @@
-import { View, StyleSheet, Animated, StatusBar } from "react-native";
+import { View, StyleSheet, Animated } from "react-native";
 import React, { useEffect, useRef, useState } from "react";
 import Header from "@/components/home/components/header";
 import MainHeading from "@/components/home/components/main-heading";
@@ -49,8 +49,6 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar translucent barStyle="dark-content" />
-
       <Animated.ScrollView
         contentContainerStyle={styles.scrollContent}
         onScroll={Animated.event(

@@ -71,9 +71,9 @@ const PersonalisedInsights = () => {
           showsHorizontalScrollIndicator={false}
           renderItem={({ item }) => <InsightCard insight={item} />}
           ItemSeparatorComponent={() => <View style={{ width: 12 }} />}
-          contentContainerStyle={{ paddingRight: 16 }}
+          contentContainerStyle={{ paddingHorizontal: 16 }}
           ListFooterComponent={<InsightCardLast />}
-          ListFooterComponentStyle={{marginLeft: 16}}
+          ListFooterComponentStyle={{ marginLeft: 16 }}
         />
       </View>
     </View>
@@ -85,7 +85,7 @@ export default PersonalisedInsights;
 const styles = StyleSheet.create({
   // Cards
   cardContainer: {
-    paddingLeft: 16,
+    // paddingLeft: 16,
     marginBottom: 24,
   },
   cardTitle: {
@@ -94,6 +94,7 @@ const styles = StyleSheet.create({
     fontWeight: 400,
     fontSize: 14,
     lineHeight: 20,
+    marginLeft: 16,
   },
   cardSubTitle: {
     color: "rgba(0, 0, 0, 0.5)",
@@ -102,5 +103,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 18,
     marginBottom: 10,
+    marginLeft: 16,
   },
 });

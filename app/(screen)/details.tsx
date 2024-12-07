@@ -1,8 +1,8 @@
-import HealthStats from "@/components/analytics/components/health-stats";
-import TabButton from "@/components/analytics/components/tab-button";
-import TimeLabelCard from "@/components/analytics/components/time-label-card";
-import TimelineHeader from "@/components/analytics/components/timeline-header";
-import TimelineItem from "@/components/analytics/components/timeline-item";
+import HealthStats from "@/components/details/components/health-stats";
+import TabButton from "@/components/details/components/tab-button";
+import TimeLabelCard from "@/components/details/components/time-label-card";
+import TimelineHeader from "@/components/details/components/timeline-header";
+import TimelineItem from "@/components/details/components/timeline-item";
 import { icons } from "@/constants";
 import { chartData2 } from "@/constants/chart";
 import { Colors } from "@/constants/Colors";
@@ -53,6 +53,11 @@ const Analytics = () => {
 
   return (
     <ScrollView style={styles.container}>
+      <StatusBar
+        barStyle="light-content"
+        translucent={true}
+        backgroundColor="transparent"
+      />
       {/* Top container */}
       <LinearGradient
         colors={["rgba(29, 173, 115, 1)", "rgba(5, 150, 105, 1)"]}

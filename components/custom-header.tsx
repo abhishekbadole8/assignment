@@ -10,12 +10,16 @@ import {
 import { Colors } from "@/constants/Colors";
 import { icons } from "@/constants";
 import { STATUS_BAR_HEIGHT } from "@/constants/layout";
+import { router } from "expo-router";
 
-const CustomHeader = ({title}:{title:string}) => {
+const CustomHeader = ({ screen }: { screen: any }) => {
+  const handleNavigation = () => {
+    router.push(screen);
+  };
   return (
     <View style={styles.headerContainer}>
       <Text style={styles.userName}>Mark Maurice</Text>
-      <TouchableOpacity style={styles.iconContainer} onPress={() => {}}>
+      <TouchableOpacity style={styles.iconContainer} onPress={handleNavigation}>
         <icons.SettingBlack />
       </TouchableOpacity>
     </View>
@@ -31,10 +35,10 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: Colors.white,
-    paddingVertical: 9,
+    paddingVertical: 8,
     paddingRight: 16,
     paddingLeft: 20,
-    
+
     ...Platform.select({
       ios: {
         shadowColor: "#000",
@@ -59,6 +63,4 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
   },
-
-  
 });

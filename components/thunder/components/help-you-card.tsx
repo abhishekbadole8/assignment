@@ -21,16 +21,16 @@ const styles = StyleSheet.create({
     padding: 8,
     backgroundColor: "rgba(234, 235, 251, 1)",
     alignSelf: "flex-start",
-    width: "auto",
+    width: "100%",
   },
   botText: {
-    color: "rgba(8, 8, 8, 1)",
+    color: "rgba(8, 8, 8, 1)", // #080808
     fontFamily: "Gilroy-Medium",
     fontWeight: 400,
     fontSize: 14,
     lineHeight: 20,
     letterSpacing: 0.4,
-    textAlign: "right",
+    textAlign: "left",
   },
   messageTime: {
     marginTop: 4,

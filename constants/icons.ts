@@ -55,6 +55,7 @@ import BiomarkerMoon from "../assets/icons/biomarker-moon.svg";
 import BiomarkerCortisol from "../assets/icons/biomarker-cortisol.svg";
 import BiomarkerHeart from "../assets/icons/biomarker-heart.svg";
 import InteractionGuide from "../assets/icons/interaction-guide-icon.svg";
+import LeftArrowBlack from "../assets/icons/left-arrow-black.svg";
 
 export const icons = {
   QuickConsultationIcon,
@@ -113,5 +114,6 @@ export const icons = {
   BiomarkerMoon,
   BiomarkerCortisol,
   BiomarkerHeart,
-  InteractionGuide
+  InteractionGuide,
+  LeftArrowBlack
 };

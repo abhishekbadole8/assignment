@@ -1,7 +1,7 @@
 import { Colors } from "@/constants/Colors";
-import { View, Text, StyleSheet, Pressable } from "react-native";
-import CustomButton from "./custom-button";
+import { View, Text, StyleSheet, Pressable, Platform } from "react-native";
 import { IChat, IOption } from "@/types/IChat";
+import CustomButton from "@/components/custom-button";
 
 interface IBotMessageProps {
   item: IChat;
@@ -75,13 +75,19 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignSelf: "flex-start",
     overflow: "hidden",
-    // iOS
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.15,
-    shadowRadius: 14,
-    // Shadow for Android
-    elevation: 3,
+
+     // shadow
+     ...Platform.select({
+      ios: {
+        shadowColor: "rgba(0, 0, 0, 0.15)",
+        shadowOffset: { width: 0, height: 0 },
+        shadowOpacity: 1,
+        shadowRadius: 14,
+      },
+      android: {
+        elevation: 3,
+      },
+    }),
   },
   botHeader: {
     paddingHorizontal: 16,
@@ -141,7 +147,7 @@ const styles = StyleSheet.create({
     borderTopColor: Colors.text.fifth,
   },
   suggestionTitle: {
-    color: "#454545",
+    color: "rgba(69, 69, 69, 1)", // #454545
     fontFamily: "Gilroy-Bold",
     fontWeight: 400,
     fontSize: 16,
@@ -154,7 +160,7 @@ const styles = StyleSheet.create({
     fontWeight: 400,
     fontSize: 14,
     lineHeight: 18,
-    letterSpacing: 0.4,
+    // letterSpacing: 0.4,
     marginTop: 4,
     marginBottom: 12,
   },

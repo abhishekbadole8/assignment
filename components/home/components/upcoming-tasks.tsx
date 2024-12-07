@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, FlatList } from "react-native";
 import React from "react";
-import { images } from "@/constants";
+import { icons, images } from "@/constants";
 import TaskCard from "./task-card";
 
 type TaskItem = {
@@ -10,7 +10,7 @@ type TaskItem = {
     time: string;
     environment: string;
   };
-  image: any;
+  icon: any;
   labelColor: string;
   backgroundColor: string;
 };
@@ -25,7 +25,7 @@ const tasks: TaskItem[] = [
       time: "10 min",
       environment: "outdoor",
     },
-    image: images.girl,
+    icon: icons.YogaGirl,
     labelColor: "rgba(9, 142, 102, 1)", // #098E66
     backgroundColor: "#4259B6",
   },
@@ -36,7 +36,7 @@ const tasks: TaskItem[] = [
       time: "10 min",
       environment: "indoor",
     },
-    image: images.girl,
+    icon: icons.YogaGirl,
     labelColor: "rgba(0, 0, 0, 0.2)",
     backgroundColor: "rgba(66, 89, 182, 1)", //#4259B6
   },
@@ -47,7 +47,7 @@ const tasks: TaskItem[] = [
       time: "10 min",
       environment: "indoor",
     },
-    image: images.girl,
+    icon: icons.YogaGirl,
     labelColor: "rgba(0, 0, 0, 0.2)",
     backgroundColor: "rgba(66, 89, 182, 1)", //#4259B6
   },
@@ -66,7 +66,7 @@ const UpcomingTasks = () => {
           showsHorizontalScrollIndicator={false}
           renderItem={({ item }) => <TaskCard task={item} />}
           ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
-          contentContainerStyle={{ paddingRight: 16 }}
+          contentContainerStyle={{ paddingHorizontal: 16 }}          
         />
       </View>
     </View>
@@ -78,7 +78,7 @@ export default UpcomingTasks;
 const styles = StyleSheet.create({
   // Cards
   cardContainer: {
-    paddingLeft: 16,
+    // paddingLeft: 16,
     marginBottom: 24,
   },
   cardTitle: {
@@ -87,5 +87,6 @@ const styles = StyleSheet.create({
     fontWeight: 400,
     lineHeight: 20,
     marginBottom: 10,
+    marginLeft:16
   },
 });

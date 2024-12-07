@@ -162,7 +162,9 @@ const HabitStacksCard: React.FC<HabitStacksCardProps> = ({
             {impacts.map((impact: any) => (
               <View style={styles.metricItem} key={impact.id}>
                 <Text style={styles.metricTitle}>{impact.name}</Text>
-                <Text style={styles.metricValue}>{impact.value}</Text>
+                <Text style={styles.metricValue}>{impact.value}
+                <Text style={styles.percentage}>%</Text>
+                </Text>
               </View>
             ))}
           </View>
@@ -313,5 +315,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     lineHeight: 24.76,
     letterSpacing: -0.03,
+  },
+  percentage:{
+    fontSize: 14,
+    lineHeight: 17.33,
   },
 });

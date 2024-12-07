@@ -59,7 +59,7 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
           }`}
           strokeDashoffset={0}
           strokeLinecap="round"
-          transform={`rotate(-90 ${outerRadius} ${outerRadius})`}
+          transform={`rotate(-0 ${outerRadius} ${outerRadius})`}
         />
       </Svg>
 

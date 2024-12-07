@@ -12,7 +12,7 @@ type TaskCardProps = {
       time: string;
       environment: string;
     };
-    image: any;
+    icon: any;
     labelColor: string;
     backgroundColor: string;
   };
@@ -21,10 +21,13 @@ type TaskCardProps = {
 const CARD_WIDTH = 266;
 
 const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
+  const Icon = task.icon;
+
   return (
     <View style={[styles.card, { backgroundColor: task?.backgroundColor }]}>
       <View style={styles.imageContainer}>
-        <Image source={task?.image} />
+        {/* <Image source={task?.image} /> */}
+        <Icon />
       </View>
 
       <View style={styles.upNextlabel}>
@@ -79,7 +82,7 @@ const styles = StyleSheet.create({
     fontWeight: 400,
     fontSize: 20,
     lineHeight: 24.76,
-    marginTop: 35,
+    marginTop: 23,
   },
   subtitle: {
     color: "rgba(255, 255, 255, 0.7)",

@@ -1,5 +1,5 @@
 import { icons } from "@/constants";
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,

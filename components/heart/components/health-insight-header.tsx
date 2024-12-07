@@ -32,13 +32,13 @@ const styles = StyleSheet.create({
 
     ...Platform.select({
       ios: {
-        shadowColor: "#000",
+        shadowColor: "rgba(0, 0, 0, 0.1)",
         shadowOffset: { width: 0, height: 4 },
         shadowOpacity: 0.1,
         shadowRadius: 14,
       },
       android: {
-        elevation: 6,
+        elevation: 4,
       },
     }),
   },
@@ -69,10 +69,10 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   buttonText: {
-    fontFamily: "Gilroy-Bold",
+    fontFamily: "Gilroy-SemiBold",
     fontWeight: 400,
     fontSize: 14,
     lineHeight: 18,
-    color: "rgba(247, 247, 247, 1)",
+    color: "rgba(247, 247, 247, 1)", // #F7F7F7
   },
 });

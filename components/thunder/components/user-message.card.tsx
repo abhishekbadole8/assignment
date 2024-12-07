@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     maxWidth: "80%",
     marginBottom: 16,
     padding: 10,
-    backgroundColor: "#575FF6",
+    backgroundColor: "rgba(87, 95, 246, 1)", // #575FF6
     alignSelf: "flex-end",
     width: "auto",
   },

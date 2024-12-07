@@ -3,6 +3,8 @@ import React from "react";
 import CustomButton from "@/components/custom-button";
 import { Colors } from "@/constants/Colors";
 import { router } from "expo-router";
+import { BlurView } from "expo-blur";
+import { icons } from "@/constants";
 
 interface BioMarker {
   title: string;
@@ -34,12 +36,13 @@ const bioMarkerTracked: BioMarker[] = [
 
 const BiomarkerCard = () => {
   return (
-    <View style={styles.biomarkerCard}>
+    <BlurView intensity={6} style={styles.biomarkerCard}>
       {/* header */}
       <View style={styles.biomarkerCardHeader}>
         <Text style={styles.titleNumber}>80</Text>
         <Text style={styles.subTitleText}>Active Biomarker {"\n"}tracked</Text>
       </View>
+
       {/* body */}
       <View style={styles.biomarkerCardBody}>
         {bioMarkerTracked.map(({ id, score, title, color }, index) => (
@@ -53,14 +56,18 @@ const BiomarkerCard = () => {
           </View>
         ))}
       </View>
+
       {/* footer */}
-      <CustomButton
-        title="view all Biomarkers"
-        handlePress={() => {}}
-        containerStyles={{ margin: 12 }}
-        textStyles={Colors.white}
-      />
-    </View>
+      <View style={styles.biomarkerCardFooter}>
+        <CustomButton
+          title="view all Biomarkers"
+          handlePress={() => {}}
+          containerStyles={{ margin: 12, marginBottom: 9 }}
+          textStyles={Colors.white}
+        />
+        <icons.LeftArrow style={styles.arrowIcon} />
+      </View>
+    </BlurView>
   );
 };
 
@@ -84,11 +91,11 @@ const styles = StyleSheet.create({
           width: 0,
           height: 9,
         },
-        shadowOpacity: 0.6,
-        shadowRadius: 12,
+        shadowOpacity: 0.3,
+        shadowRadius: 10,
       },
       android: {
-        elevation: 9,
+        elevation: 10,
       },
     }),
   },
@@ -139,6 +146,17 @@ const styles = StyleSheet.create({
   },
   //
   //footer
+  biomarkerCardFooter: {
+    flexDirection: "row",
+    alignItems: "center",
+    position: "relative",
+  },
+  arrowIcon: {
+    position: "absolute",
+    right: 22,
+    transform: [{ rotate: "180deg" }],
+    height: 9,
+  },
   //
   //
 });

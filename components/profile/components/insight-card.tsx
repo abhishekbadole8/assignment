@@ -42,8 +42,11 @@ const InsightCard: React.FC<InsightCardProps> = ({ insight }) => {
         <View style={styles.levelBlock}>
           <Text style={styles.levelTitle}>{insight1.title}</Text>
           <View style={styles.levelValueContainer}>
-            <Text style={styles.levelValue}>{insight1.value}%</Text>
-           < insight1.icon/>
+            <Text style={styles.levelValue}>
+              {insight1.value}
+              <Text style={styles.percentage}>%</Text>
+            </Text>
+            <insight1.icon />
           </View>
         </View>
 
@@ -51,8 +54,10 @@ const InsightCard: React.FC<InsightCardProps> = ({ insight }) => {
         <View style={[styles.levelBlock, styles.levelRight]}>
           <Text style={styles.levelTitle}>{insight2.title}</Text>
           <View style={styles.levelValueContainer}>
-            <Text style={styles.levelValue}>{insight2.value}%</Text>
-            <insight1.icon/>
+            <Text style={styles.levelValue}>
+              {insight2.value}<Text style={styles.percentage}>%</Text>
+            </Text>
+            <insight1.icon />
           </View>
         </View>
       </View>
@@ -91,7 +96,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(255, 255, 255, 0.08)",
     borderRadius: 8,
     paddingVertical: 8,
-    marginBottom: LABEL_HEIGHT-6,
+    marginBottom: LABEL_HEIGHT - 6,
   },
   levelBlock: {
     flex: 1,
@@ -121,6 +126,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     lineHeight: 24.76,
     letterSpacing: -0.03,
+  },
+  percentage:{
+    fontSize: 14,
+    lineHeight: 17.33,
   },
   //
 

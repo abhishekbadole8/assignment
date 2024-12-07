@@ -32,9 +32,9 @@ export const data: HabitStackItem[] = [
       { id: "3", time: "8:00am", icon: icons.SunOutlined, name: "Breakfast" },
     ],
     impacts: [
-      { id: "1", name: "Energy", value: "+32%" },
-      { id: "2", name: "Metabolism", value: "+92%" },
-      { id: "3", name: "Mood", value: "+28%" },
+      { id: "1", name: "Energy", value: "+32" },
+      { id: "2", name: "Metabolism", value: "+92" },
+      { id: "3", name: "Mood", value: "+28" },
     ],
   },
   {
@@ -47,9 +47,9 @@ export const data: HabitStackItem[] = [
       { id: "3", time: "10:30am", icon: icons.SunOutlined, name: "Meditation" },
     ],
     impacts: [
-      { id: "1", name: "Focus", value: "+45%" },
-      { id: "2", name: "Clarity", value: "+40%" },
-      { id: "3", name: "Calmness", value: "+60%" },
+      { id: "1", name: "Focus", value: "+45" },
+      { id: "2", name: "Clarity", value: "+40" },
+      { id: "3", name: "Calmness", value: "+60" },
     ],
   },
   {
@@ -67,9 +67,9 @@ export const data: HabitStackItem[] = [
       { id: "3", time: "8:30pm", icon: icons.SunOutlined, name: "Reading" },
     ],
     impacts: [
-      { id: "1", name: "Relaxation", value: "+75%" },
-      { id: "2", name: "Sleep Quality", value: "+85%" },
-      { id: "3", name: "Mood", value: "+30%" },
+      { id: "1", name: "Relaxation", value: "+75" },
+      { id: "2", name: "Sleep Quality", value: "+85" },
+      { id: "3", name: "Mood", value: "+30" },
     ],
   },
   {
@@ -87,9 +87,9 @@ export const data: HabitStackItem[] = [
       },
     ],
     impacts: [
-      { id: "1", name: "Energy", value: "+70%" },
-      { id: "2", name: "Happiness", value: "+80%" },
-      { id: "3", name: "Mental Clarity", value: "+50%" },
+      { id: "1", name: "Energy", value: "+70" },
+      { id: "2", name: "Happiness", value: "+80" },
+      { id: "3", name: "Mental Clarity", value: "+50" },
     ],
   },
 ];

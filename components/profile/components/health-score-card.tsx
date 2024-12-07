@@ -35,8 +35,9 @@ const HealthScoreCard: React.FC = () => {
   const navigation = useNavigation();
 
   const handleFullScreenClick = () => {
-    router.push("/(tabs)/analytics");
+    router.push("/(screen)/details");
   };
+
   return (
     <LinearGradient
       colors={["rgba(29, 173, 115, 1)", "rgba(5, 150, 105, 1)"]}
@@ -131,11 +132,12 @@ const styles = StyleSheet.create({
     paddingBottom: 12,
     backgroundColor: "rgba(5, 150, 105, 1)",
     marginBottom: 24,
+    marginTop: 16,
 
     // shadow
     ...Platform.select({
       ios: {
-        shadowColor: "#000",
+        shadowColor: "rgba(0, 0, 0, 0.35)",
         shadowOffset: { width: 0, height: 6 },
         shadowOpacity: 0.35,
         shadowRadius: 6,

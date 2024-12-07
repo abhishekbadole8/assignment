@@ -91,6 +91,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     overflow: "hidden",
     marginBottom: 41,
+    marginTop:12
   },
   //
   headerContainer: {

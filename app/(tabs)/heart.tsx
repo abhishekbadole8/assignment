@@ -1,15 +1,9 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import React, { useState } from "react";
-import BiomarkerCard from "@/components/health-insights/components/biomarker-card";
+import BiomarkerCard from "@/components/heart/components/biomarker-card";
 import { icons } from "@/constants";
 import { assessedAreasData } from "@/constants/data";
-import AssessedArea from "@/components/health-insights/components/assessed-area";
+import AssessedArea from "@/components/heart/components/assessed-area";
 import { router } from "expo-router";
 
 const HealthInsights = () => {
@@ -19,9 +13,9 @@ const HealthInsights = () => {
     setOpenAreaId(openAreaId === id ? null : id);
   };
 
-  const handleNavigation = (id: string)=>{
-    router.push('/(screen)/view-all-biomarkers')
-  }
+  const handleNavigation = (id: string) => {
+    router.push("/(screen)/view-all-biomarkers");
+  };
 
   return (
     <ScrollView style={styles.container}>
