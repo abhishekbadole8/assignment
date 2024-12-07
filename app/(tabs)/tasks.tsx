@@ -1,7 +1,14 @@
-import { View, Text, ScrollView, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 import React, { useState } from "react";
 import { icons } from "@/constants";
 import { SafeAreaView } from "react-native-safe-area-context";
+import TopContainer from "@/components/tasks/top-container";
 
 enum TAB_BUTTON {
   TODAY = "TODAY",
@@ -20,24 +27,52 @@ const Tasks = () => {
   return (
     <SafeAreaView style={styles.container}>
       {/* Top Container */}
-      <View style={styles.topContainer}>
-        <View style={styles.sunContainer}>
-          <icons.SunWithBlur style={styles.sunIcon} />
-        </View>
+      <TopContainer />
 
-        <View>
-          <Text style={styles.topContainerHeading}>Sunny</Text>
-          <Text style={styles.topContainerSubHeading}>
-            Condition optimal:{" "}
-            <Text style={styles.topContainerSubHeadingMuted}>
-              proceed as planned
+      {/* Your tasks */}
+      <View style={styles.contentContainer}>
+        {/* <View style={styles.headerContainer}> */}
+        <Text style={styles.headerText}>Your tasks</Text>
+
+        {/* Tabs container */}
+        <View style={styles.tabsContainer}>
+          <TouchableOpacity
+            style={
+              activeTab == TAB_BUTTON.TODAY
+                ? styles.activeTab
+                : styles.inactiveTab
+            }
+            onPress={() => handleTabButton(TAB_BUTTON.TODAY)}
+          >
+            <Text
+              style={[
+                styles.tabText,
+                activeTab !== TAB_BUTTON.TODAY && styles.inActiveTabText,
+              ]}
+            >
+              today
             </Text>
-          </Text>
-        </View>
+          </TouchableOpacity>
 
-        <View style={styles.downArrow}>
-          <icons.DownwardArrowWhite />
+          <TouchableOpacity
+            style={
+              activeTab == TAB_BUTTON.TOMMOROW
+                ? styles.activeTab
+                : styles.inactiveTab
+            }
+            onPress={() => handleTabButton(TAB_BUTTON.TOMMOROW)}
+          >
+            <Text
+              style={[
+                styles.tabText,
+                activeTab !== TAB_BUTTON.TOMMOROW && styles.inActiveTabText,
+              ]}
+            >
+              tomorrow
+            </Text>
+          </TouchableOpacity>
         </View>
+        {/* </View> */}
       </View>
     </SafeAreaView>
   );
@@ -50,54 +85,59 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 31,
   },
-  // top container
-  topContainer: {
-    backgroundColor: "rgba(0, 0, 0, 1)",
-    paddingLeft: 14.5,
-    paddingRight: 16,
+  //
+  // your tasks
+  contentContainer: {
+    paddingHorizontal: 16,
     paddingVertical: 14,
+  },
+  headerText: {
+    color: "rgba(49, 49, 49, 1)",
+    fontFamily: "Recoleta",
+    fontWeight: 500,
+    fontSize: 20,
+    lineHeight: 27.2,
+    letterSpacing: -0.03,
+    marginBottom: 8,
+  },
+  //
+  // tabs container
+  tabsContainer: {
     flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "flex-start",
-    gap: 16,
+    gap: 8,
   },
-  sunContainer: {
-    width: 42,
-    height: 42,
-    borderRadius: 100,
-    alignItems: "center",
-    justifyContent: "center",
+  // active
+  activeTab: {
+    borderWidth: 0.4,
+    borderColor: "rgba(0, 0, 0, 1)",
+    borderRadius: 80,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
   },
-  sunIcon: {
-    width: 42,
-    height: 42,
-  },
-  topContainerHeading: {
-    fontFamily: "Gilroy-Bold",
+  tabText: {
+    color: "rgba(0,0,0, 1)",
+    fontFamily: "Gilroy-SemiBold",
     fontWeight: 400,
-    fontSize: 16,
-    lineHeight: 19.81,
-    color: "rgba(255, 255, 255, 1)",
-    marginBottom: 4,
+    fontSize: 14,
+    lineHeight: 17.15,
+    textAlign: "center",
   },
-  topContainerSubHeading: {
-    color: "rgba(255, 255, 255, 0.8)",
-    fontFamily: "Gilroy-Bold",
+
+  // inactive
+  inactiveTab: {
+    borderWidth: 0.4,
+    borderColor: "rgba(234, 234, 234, 1)",
+    backgroundColor: "rgba(234, 234, 234, 1)",
+    borderRadius: 80,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+  },
+  inActiveTabText: {
+    color: "rgba(0,0,0, 0.6)",
+    fontFamily: "Gilroy-SemiBold",
     fontWeight: 400,
-    fontSize: 12,
-    lineHeight: 18,
-  },
-  topContainerSubHeadingMuted: {
-    color: "rgba(255, 255, 255, 0.5)",
-    fontFamily: "Gilroy-Medium",
-  },
-  // dropdown arrow
-  downArrow: {
-    width: 24,
-    height: 24,
-    justifyContent: "flex-end",
-    marginTop: "auto",
-    marginLeft:"auto",
-    marginBottom: 7.2,
+    fontSize: 14,
+    lineHeight: 17.15,
+    textAlign: "center",
   },
 });
