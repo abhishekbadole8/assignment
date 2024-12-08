@@ -7,7 +7,6 @@ import {
   StatusBar,
 } from "react-native";
 import React, { useState } from "react";
-import { icons } from "@/constants";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TopContainer from "@/components/tasks/top-container";
 import CurrentTaskCard from "@/components/tasks/current-task-card";
@@ -20,7 +19,7 @@ enum TAB_BUTTON {
 }
 
 const Tasks = () => {
-  const [activeTab, setActiveTab] = useState(TAB_BUTTON.TOMMOROW);
+  const [activeTab, setActiveTab] = useState(TAB_BUTTON.TODAY);
 
   const handleTabButton = (title: string) => {
     setActiveTab(
