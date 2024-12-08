@@ -4,11 +4,15 @@ import {
   ScrollView,
   StyleSheet,
   TouchableOpacity,
+  StatusBar,
 } from "react-native";
 import React, { useState } from "react";
 import { icons } from "@/constants";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TopContainer from "@/components/tasks/top-container";
+import CurrentTaskCard from "@/components/tasks/current-task-card";
+import { todaysTasks } from "@/constants/data";
+import UpcomingTaskCard from "@/components/tasks/upcoming-task-card";
 
 enum TAB_BUTTON {
   TODAY = "TODAY",
@@ -26,6 +30,7 @@ const Tasks = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor="transparent" barStyle="dark-content" />
       {/* Top Container */}
       <TopContainer />
 
@@ -72,8 +77,28 @@ const Tasks = () => {
             </Text>
           </TouchableOpacity>
         </View>
-        {/* </View> */}
       </View>
+
+      {/* </View> */}
+      {activeTab === TAB_BUTTON.TODAY && (
+        <>
+          <View>
+            <CurrentTaskCard task={todaysTasks[0]} />
+          </View>
+
+          <View style={styles.dividerContainer}>
+            <View style={styles.divider} />
+            <Text style={styles.dividerText}>more in the day</Text>
+            <View style={styles.divider} />
+          </View>
+
+          {/* <View style={styles.upcomingTasksContainer}>
+            {todaysTasks.map((task) => {
+              return <UpcomingTaskCard key={task.id} task={task} />;
+            })}
+          </View> */}
+        </>
+      )}
     </SafeAreaView>
   );
 };
@@ -89,8 +114,10 @@ const styles = StyleSheet.create({
   // your tasks
   contentContainer: {
     paddingHorizontal: 16,
-    paddingVertical: 14,
+    marginVertical: 14,
+    marginBottom: 16,
   },
+  //
   headerText: {
     color: "rgba(49, 49, 49, 1)",
     fontFamily: "Recoleta",
@@ -139,5 +166,37 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 17.15,
     textAlign: "center",
+  },
+  //
+  //
+  //
+  dividerContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  dividerText: {
+    padding: 10,
+    fontFamily: "Gilroy-Bold",
+    fontWeight: 400,
+    fontSize: 14,
+    lineHeight: 17.15,
+    color: "rgba(0, 0, 0, 1)",
+  },
+  divider: {
+    borderTopWidth: 0.4,
+    borderColor: "rgba(0, 0, 0, 0.4)",
+    width: 60,
+  },
+
+  upcomingTasksContainer: {
+    gap: 16,
+    paddingBottom: 30,
+  },
+
+  upcomingTasksTomContainer: {
+    marginTop: 16,
+    gap: 16,
+    paddingBottom: 30,
   },
 });
