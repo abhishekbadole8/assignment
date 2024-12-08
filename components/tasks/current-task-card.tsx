@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     marginHorizontal: 16,
     overflow: "hidden",
+    marginBottom: 16,
 
     // shadow
     ...Platform.select({

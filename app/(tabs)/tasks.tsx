@@ -11,7 +11,7 @@ import { icons } from "@/constants";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TopContainer from "@/components/tasks/top-container";
 import CurrentTaskCard from "@/components/tasks/current-task-card";
-import { todaysTasks } from "@/constants/data";
+import { todaysTasks, tommorowsTasks } from "@/constants/data";
 import UpcomingTaskCard from "@/components/tasks/upcoming-task-card";
 
 enum TAB_BUTTON {
@@ -20,7 +20,7 @@ enum TAB_BUTTON {
 }
 
 const Tasks = () => {
-  const [activeTab, setActiveTab] = useState(TAB_BUTTON.TODAY);
+  const [activeTab, setActiveTab] = useState(TAB_BUTTON.TOMMOROW);
 
   const handleTabButton = (title: string) => {
     setActiveTab(
@@ -34,71 +34,85 @@ const Tasks = () => {
       {/* Top Container */}
       <TopContainer />
 
-      {/* Your tasks */}
-      <View style={styles.contentContainer}>
-        {/* <View style={styles.headerContainer}> */}
-        <Text style={styles.headerText}>Your tasks</Text>
+      {/* Scrollable Content */}
+      <ScrollView
+        contentContainerStyle={styles.scrollContent}
+        showsVerticalScrollIndicator={false}
+      >
+        {/* Your tasks */}
+        <View style={styles.contentContainer}>
+          {/* <View style={styles.headerContainer}> */}
+          <Text style={styles.headerText}>Your tasks</Text>
 
-        {/* Tabs container */}
-        <View style={styles.tabsContainer}>
-          <TouchableOpacity
-            style={
-              activeTab == TAB_BUTTON.TODAY
-                ? styles.activeTab
-                : styles.inactiveTab
-            }
-            onPress={() => handleTabButton(TAB_BUTTON.TODAY)}
-          >
-            <Text
-              style={[
-                styles.tabText,
-                activeTab !== TAB_BUTTON.TODAY && styles.inActiveTabText,
-              ]}
+          {/* Tabs container */}
+          <View style={styles.tabsContainer}>
+            <TouchableOpacity
+              style={
+                activeTab == TAB_BUTTON.TODAY
+                  ? styles.activeTab
+                  : styles.inactiveTab
+              }
+              onPress={() => handleTabButton(TAB_BUTTON.TODAY)}
             >
-              today
-            </Text>
-          </TouchableOpacity>
+              <Text
+                style={[
+                  styles.tabText,
+                  activeTab !== TAB_BUTTON.TODAY && styles.inActiveTabText,
+                ]}
+              >
+                today
+              </Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity
-            style={
-              activeTab == TAB_BUTTON.TOMMOROW
-                ? styles.activeTab
-                : styles.inactiveTab
-            }
-            onPress={() => handleTabButton(TAB_BUTTON.TOMMOROW)}
-          >
-            <Text
-              style={[
-                styles.tabText,
-                activeTab !== TAB_BUTTON.TOMMOROW && styles.inActiveTabText,
-              ]}
+            <TouchableOpacity
+              style={
+                activeTab == TAB_BUTTON.TOMMOROW
+                  ? styles.activeTab
+                  : styles.inactiveTab
+              }
+              onPress={() => handleTabButton(TAB_BUTTON.TOMMOROW)}
             >
-              tomorrow
-            </Text>
-          </TouchableOpacity>
+              <Text
+                style={[
+                  styles.tabText,
+                  activeTab !== TAB_BUTTON.TOMMOROW && styles.inActiveTabText,
+                ]}
+              >
+                tomorrow
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
 
-      {/* </View> */}
-      {activeTab === TAB_BUTTON.TODAY && (
-        <>
-          <View>
+        {/* </View> */}
+        {activeTab === TAB_BUTTON.TODAY && (
+          <>
             <CurrentTaskCard task={todaysTasks[0]} />
-          </View>
 
-          <View style={styles.dividerContainer}>
-            <View style={styles.divider} />
-            <Text style={styles.dividerText}>more in the day</Text>
-            <View style={styles.divider} />
-          </View>
+            {/* more in day */}
+            <View style={styles.dividerContainer}>
+              <View style={styles.divider} />
+              <Text style={styles.dividerText}>more in the day</Text>
+              <View style={styles.divider} />
+            </View>
 
-          {/* <View style={styles.upcomingTasksContainer}>
-            {todaysTasks.map((task) => {
-              return <UpcomingTaskCard key={task.id} task={task} />;
-            })}
-          </View> */}
-        </>
-      )}
+            {/* cards */}
+            <View style={styles.upcomingTasksContainer}>
+              {todaysTasks.map((task) => (
+                <UpcomingTaskCard key={task.id} task={task} />
+              ))}
+            </View>
+          </>
+        )}
+
+        {activeTab === TAB_BUTTON.TOMMOROW && (
+          <View style={styles.upcomingTasksTomContainer}>
+            {tommorowsTasks.map((task) => (
+              <UpcomingTaskCard key={task.id} task={task} />
+            ))}
+          </View>
+        )}
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -111,6 +125,9 @@ const styles = StyleSheet.create({
     marginTop: 31,
   },
   //
+  scrollContent: {
+    paddingBottom: 31,
+  },
   // your tasks
   contentContainer: {
     paddingHorizontal: 16,
@@ -174,28 +191,30 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+    marginBottom: 16,
+    paddingVertical: 10,
   },
   dividerText: {
-    padding: 10,
+    color: "rgba(0, 0, 0, 1)",
     fontFamily: "Gilroy-Bold",
     fontWeight: 400,
     fontSize: 14,
     lineHeight: 17.15,
-    color: "rgba(0, 0, 0, 1)",
+    paddingHorizontal: 10,
   },
   divider: {
     borderTopWidth: 0.4,
     borderColor: "rgba(0, 0, 0, 0.4)",
     width: 60,
   },
-
+  //
+  //
   upcomingTasksContainer: {
     gap: 16,
     paddingBottom: 30,
   },
-
+  //
   upcomingTasksTomContainer: {
-    marginTop: 16,
     gap: 16,
     paddingBottom: 30,
   },
