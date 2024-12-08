@@ -9,16 +9,19 @@ const connectedDevices = [
     id: 1,
     name: "Apple Watch Series 8",
     batteryStatus: "98% battery",
+    isConnected: true,
   },
   {
     id: 2,
     name: "Samsung Galaxy Watch 5",
-    batteryStatus: "85% battery",
+    batteryStatus: "0% battery",
+    isConnected: false,
   },
   {
     id: 3,
     name: "Fitbit Versa 3",
     batteryStatus: "75% battery",
+    isConnected: true,
   },
 ];
 
@@ -34,17 +37,35 @@ const ConnectedDevices = () => {
           ]}
           activeOpacity={0.75}
         >
-          <View style={styles.listIconContainer}>
-            <icons.Bluetooth style={styles.listIcon} />
+          {/* bluetooth Icon cont */}
+          <View
+            style={[
+              styles.listIconContainer,
+              !device.isConnected && {
+                backgroundColor: "rgba(172, 172, 172, 0.2)",
+              },
+            ]}
+          >
+            {device.isConnected ? (
+              <icons.BluetoothActive style={styles.listIcon} />
+            ) : (
+              <icons.BluetoothInActive style={styles.listIcon} />
+            )}
           </View>
 
           <View style={styles.listTextContainer}>
             <Text style={styles.listText}>{device.name}</Text>
             <View style={styles.listTextBatteryContainer}>
-              <icons.Battery style={styles.batteryIcon} />
-              <Text style={styles.batteryStatusTitle}>
-                {device.batteryStatus}
-              </Text>
+              {device.isConnected ? (
+                <>
+                  <icons.Battery style={styles.batteryIcon} />
+                  <Text style={styles.batteryStatusTitle}>
+                    {device.batteryStatus}
+                  </Text>
+                </>
+              ) : (
+                <Text style={styles.batteryStatusTitle}>disconnected</Text>
+              )}
             </View>
           </View>
 
@@ -75,7 +96,7 @@ const styles = StyleSheet.create({
   listIconContainer: {
     width: 24,
     height: 24,
-    padding: 4.25,
+    padding: 4.31,
     backgroundColor: "rgba(18, 165, 73, 0.2)",
     borderRadius: 100,
     alignItems: "center",
@@ -115,7 +136,7 @@ const styles = StyleSheet.create({
     fontSize: 11.52,
     fontWeight: 400,
     lineHeight: 15.36,
-    letterSpacing: 0.47,
+    letterSpacing: 0.48,
     color: "rgba(0, 0, 0, 0.28)",
   },
 

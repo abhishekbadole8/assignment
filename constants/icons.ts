@@ -12,7 +12,8 @@ import Sms from "@/assets/icons/sms.svg";
 import ArrowRightBlack from "@/assets/icons/right-arrow.svg";
 import LeftArrow from "@/assets/icons/Right_Arrow.svg";
 import Battery from "@/assets/icons/battery.svg";
-import Bluetooth from "@/assets/icons/Bluetooth.svg";
+import BluetoothActive from "@/assets/icons/Bluetooth-active.svg";
+import BluetoothInActive from "@/assets/icons/Bluetooth-inactive.svg";
 import CloseCircle from "@/assets/icons/close-circle.svg";
 import BackgroundShade from "@/assets/icons/background-print.svg";
 
@@ -78,7 +79,8 @@ export const icons = {
   ArrowRightBlack,
   LeftArrow,
   Battery,
-  Bluetooth,
+  BluetoothActive,
+  BluetoothInActive,
   CloseCircle,
   BackgroundShade,
 
