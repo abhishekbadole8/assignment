@@ -18,7 +18,7 @@ const TimelineHeader: React.FC<IActiveTimeFilterProps> = ({
   return (
     <View style={styles.tabContainerFooter}>
       {timeFilters.map((filter) => (
-        <View style={styles.tabFooterBlock}>
+        <View style={styles.tabFooterBlock} key={filter.id}>
           <Text
             style={[
               styles.tabFooterBlockText,
