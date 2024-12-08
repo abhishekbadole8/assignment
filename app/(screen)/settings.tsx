@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   StatusBar,
+  Platform,
 } from "react-native";
 import { icons } from "@/constants";
 import { Colors } from "@/constants/Colors";
@@ -100,7 +101,11 @@ const Profile = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar translucent backgroundColor="transparent"  barStyle="light-content"/>
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle="light-content"
+      />
       {/* Header Section */}
       <ProfileHeader />
 
@@ -126,13 +131,13 @@ const Profile = () => {
         <Text style={styles.fabText}>health data</Text>
       </TouchableOpacity>
 
+      {/* Bottom Sheet */}
       <BottomSheet isVisible={isModalOpen} onClose={onClose}>
         <BottomSheetHeader
           TitleIcon={modalContent?.icon}
           title={modalContent?.title || ""}
           onClose={onClose}
         />
-
         <BottomSheetBody>{modalContent?.component}</BottomSheetBody>
       </BottomSheet>
     </View>
@@ -151,7 +156,7 @@ const styles = StyleSheet.create({
   listContainer: {
     paddingVertical: 24,
     paddingHorizontal: 16,
-    paddingBottom: 68
+    paddingBottom: 68,
   },
   section: {
     marginBottom: 16,
@@ -178,16 +183,18 @@ const styles = StyleSheet.create({
     fontWeight: 400,
     lineHeight: 18,
 
-    
     // shadow
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.55,
-    shadowRadius: 5,
-    elevation: 8,
+    ...Platform.select({
+      ios: {
+        shadowColor: "rgba(0, 0, 0, 0.55)",
+        shadowOffset: { width: 0, height: 0 },
+        shadowOpacity: 0.55,
+        shadowRadius: 20,
+      },
+      android: {
+        elevation: 10,
+      },
+    }),
   },
   fabIcon: {
     width: 13.35,
