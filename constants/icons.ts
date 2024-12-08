@@ -25,6 +25,12 @@ import Drop from "../assets/icons/water-drop.svg";
 import SunMoonBgEffect from "../assets/icons/sun-moon-bg-effect.svg";
 import YogaGirl from "../assets/images/yoga_girl.svg";
 
+//tasks
+import SunWithBlur from "../assets/icons/sun_with_blur.svg";
+import DownwardArrowWhite from "../assets/icons/Downward_Arrow_White.svg";
+import GreyClock from "../assets/icons/grey-clock.svg";
+import BlackClock from "../assets/icons/black-clock.svg";
+
 // Thunder
 import FullScreen from "../assets/icons/arrow_cross.svg";
 import LightBulb from "../assets/icons/Lightbulb_on.svg";
@@ -85,6 +91,12 @@ export const icons = {
   SunMoonBgEffect,
   YogaGirl,
 
+  // tasks
+  SunWithBlur,
+  DownwardArrowWhite,
+  GreyClock,
+  BlackClock,
+
   // thunder
   FullScreen,
   LightBulb,
@@ -115,5 +127,5 @@ export const icons = {
   BiomarkerCortisol,
   BiomarkerHeart,
   InteractionGuide,
-  LeftArrowBlack
+  LeftArrowBlack,
 };

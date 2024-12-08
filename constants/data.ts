@@ -1,4 +1,5 @@
 import { icons } from "./icons";
+import { images } from "./images";
 
 export interface Activity {
   id: string;
@@ -252,5 +253,78 @@ export const assessedAreasData: IAssessedArea[] = [
 ];
 
 // -------------------------- Health Insight END   ------------------------------------------------------
+//
+
+// --------------------------  Tasks START  -------------------------------------------------------
+
+export const todaysTasks = [
+  {
+    id: 1,
+    title: "Hydration",
+    cardLabel: "needs prep",
+    energy: "+15%",
+    recovery: "+25%",
+    benefit: "Enhances vitamin D absorption",
+    time: "10:00 am",
+    duration: "10 mins",
+    activityType: "outdoor",
+    cardBgImage: images.waterBottle,
+  },
+
+  {
+    id: 2,
+    title: "Hydration",
+    cardLabel: "needs prep",
+    energy: "+15%",
+    recovery: "+25%",
+    benefit: "Enhances vitamin D absorption",
+    time: "10:00 am",
+    duration: "10 mins",
+    activityType: "outdoor",
+    cardBgImage: images.foodBowl,
+  },
+];
+
+export const tommorowsTasks = [
+  {
+    id: 3,
+    title: "Morining sunlight",
+    energy: "+15%",
+    recovery: "+25%",
+    benefit: "Enhances vitamin D absorption",
+    time: "7:00 am",
+    duration: "10 mins",
+    activityType: "outdoor",
+    cardBgImage: images.foodBowl,
+  },
+
+  {
+    id: 4,
+    title: "Mid-day meal",
+    cardLabel: "needs prep",
+    energy: "+15%",
+    recovery: "+25%",
+    benefit: "Enhances vitamin D absorption",
+    time: "7:00 am",
+    duration: "10 mins",
+    activityType: "outdoor",
+    cardBgImage: images.foodBowl,
+  },
+
+  {
+    id: 5,
+    title: "Hydration",
+    cardLabel: "needs prep",
+    energy: "+15%",
+    recovery: "+25%",
+    benefit: "Enhances vitamin D absorption",
+    time: "7:00 am",
+    duration: "10 mins",
+    activityType: "outdoor",
+    cardBgImage: images.waterBottle,
+  },
+];
+
+// --------------------------   Tasks END   ------------------------------------------------------
 
 //

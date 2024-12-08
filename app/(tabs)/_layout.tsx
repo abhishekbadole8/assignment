@@ -10,6 +10,7 @@ import HomeIcon from "@/components/tab-bar/home-icon";
 import HeartIcon from "@/components/tab-bar/heart-icon";
 import UserIcon from "@/components/tab-bar/user-icon";
 import HealthInsightHeader from "@/components/heart/components/health-insight-header";
+import ClipboardIcon from "@/components/tab-bar/clipboard-icon";
 
 export default function TabLayout() {
   return (
@@ -73,6 +74,21 @@ export default function TabLayout() {
               />
             </>
           ),
+        }}
+      />
+        <Tabs.Screen
+        name="tasks"
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, focused }) => (
+            <ClipboardIcon color={color} focused={focused} />
+          ),
+          // header: () => (
+          //   <>
+          //     <StatusBar translucent backgroundColor="transparent" />
+          //     {/* <CustomHeader /> */}
+          //   </>
+          // ),
         }}
       />
       {/* here clipboard */}

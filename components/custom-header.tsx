@@ -12,7 +12,7 @@ import { icons } from "@/constants";
 import { STATUS_BAR_HEIGHT } from "@/constants/layout";
 import { router } from "expo-router";
 
-const CustomHeader = ({ screen }: { screen: any }) => {
+const CustomHeader = ({ screen }: { screen?: any }) => {
   const handleNavigation = () => {
     router.push(screen);
   };
