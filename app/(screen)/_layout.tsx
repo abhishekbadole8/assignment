@@ -29,6 +29,12 @@ const ScreenLayout = () => {
             headerShown: false,
           }}
         />
+        <Stack.Screen
+          name="walking"
+          options={{
+            headerShown: false,
+          }}
+        />
       </Stack>
     </>
   );

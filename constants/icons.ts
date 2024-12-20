@@ -64,6 +64,15 @@ import BiomarkerHeart from "../assets/icons/biomarker-heart.svg";
 import InteractionGuide from "../assets/icons/interaction-guide-icon.svg";
 import LeftArrowBlack from "../assets/icons/left-arrow-black.svg";
 
+// walking screen
+import SoundWave from "../assets/icons/SoundWave.svg";
+import NatureSound from "../assets/icons/nature-sounds.svg";
+import News from "../assets/icons/news.svg";
+import Music from "../assets/icons/music.svg";
+import RouteSafety from "../assets/icons/route-safety.svg";
+import Play from "../assets/icons/play.svg";
+import Pause from "../assets/icons/pause.svg";
+
 export const icons = {
   QuickConsultationIcon,
   Send,
@@ -130,4 +139,13 @@ export const icons = {
   BiomarkerHeart,
   InteractionGuide,
   LeftArrowBlack,
+
+  // walking screen
+  SoundWave,
+  NatureSound,
+  News,
+  Music,
+  RouteSafety,
+  Play,
+  Pause,
 };

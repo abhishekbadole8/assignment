@@ -13,6 +13,7 @@ import { icons, images } from "@/constants";
 import { LinearGradient } from "expo-linear-gradient";
 import { BlurView } from "expo-blur";
 import CustomButton from "../custom-button";
+import { router } from "expo-router";
 
 const CurrentTaskCard: React.FC<{
   task: {
@@ -72,7 +73,7 @@ const CurrentTaskCard: React.FC<{
         </View>
 
         {/* button */}
-        <CustomButton title="start" handlePress={() => {}} />
+        <CustomButton title="start" handlePress={() => router.push('/(screen)/walking')} />
       </View>
 
       {/* corner tag */}
