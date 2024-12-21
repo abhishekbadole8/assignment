@@ -73,6 +73,9 @@ import Music from "../assets/icons/music.svg";
 import RouteSafety from "../assets/icons/route-safety.svg";
 import Play from "../assets/icons/play.svg";
 import Pause from "../assets/icons/pause.svg";
+import FullscreenBlack from "../assets/icons/arrow_cross_black.svg";
+import Cup from "../assets/icons/cup.svg";
+import Tree from "../assets/icons/tree.svg";
 
 export const icons = {
   QuickConsultationIcon,
@@ -150,4 +153,7 @@ export const icons = {
   RouteSafety,
   Play,
   Pause,
+  FullscreenBlack,
+  Cup,
+  Tree,
 };

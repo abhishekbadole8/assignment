@@ -1,8 +1,8 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import { icons } from "@/constants";
-
-const map_height = 208;
+import MapCardBody from "./map-card-body";
+import MapCardFooter from "./map-card-footer";
 
 const MapCard = () => {
   return (
@@ -22,16 +22,10 @@ const MapCard = () => {
         </View>
 
         {/* Body */}
-        <View style={styles.mapBody}></View>
+        <MapCardBody />
 
         {/* footer */}
-        <View style={styles.mapFooter}>
-          <Text style={styles.footerTitleText}>ALONG YOUR ROUTE</Text>
-          <Text style={styles.footerDescriptionText}>
-            Park, Coffee shop, bakery...
-          </Text>
-          <icons.DownwardArrowBlack />
-        </View>
+        <MapCardFooter />
       </View>
     </View>
   );
@@ -49,6 +43,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.4,
     borderColor: "rgba(0, 0, 0, 0.2)",
     borderRadius: 12,
+    overflow: "hidden",
   },
   // header
   mapHeader: {
@@ -83,35 +78,4 @@ const styles = StyleSheet.create({
     color: "rgba(92, 92, 92, 1)",
   },
   //
-  // body
-  mapBody: {
-    height: map_height,
-  },
-  //
-  // footer
-  mapFooter: {
-    paddingTop: 7,
-    paddingBottom: 11,
-    paddingRight: 10,
-    paddingLeft: 12,
-    borderTopWidth: 0.4,
-    borderColor: "rgba(0, 0, 0, 0.4)",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  footerTitleText: {
-    fontFamily: "Gilroy-SemiBold",
-    fontWeight: 400,
-    fontSize: 12,
-    lineHeight: 14.7,
-    color: "rgba(95, 95, 95, 1)",
-  },
-  footerDescriptionText: {
-    fontFamily: "Gilroy-SemiBold",
-    fontWeight: 400,
-    fontSize: 12,
-    // lineHeight: 11,
-    color: "rgba(140, 140, 140, 1)",
-  },
 });
