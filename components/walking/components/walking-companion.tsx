@@ -27,7 +27,10 @@ const WalkingCompanion = ({
           const isActive = activeCompanion === item.id;
 
           return (
-            <View style={styles.companionList} key={item.id}>
+            <View
+              style={[styles.companionList, isActive ? styles.activeList : ""]}
+              key={item.id}
+            >
               <View style={styles.companion}>
                 <item.icon />
                 <View style={styles.companionTextContainer}>
@@ -51,7 +54,6 @@ const WalkingCompanion = ({
                   )}
                 </View>
               </View>
-              {/* wave */}
 
               {/* play-pause */}
               {isActive ? (
@@ -100,11 +102,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 9,
     marginBottom: 8,
   },
+  // active list
+  activeList: {
+    backgroundColor: "rgba(71, 64, 202, 0.1)",
+    borderWidth: 0.8,
+    borderColor: "rgba(71, 64, 202, 1)",
+  },
   companion: {
     flexDirection: "row",
     alignItems: "center",
     gap: 12,
   },
+  //
   // text container
   companionTextContainer: {},
   companionTitle: {
