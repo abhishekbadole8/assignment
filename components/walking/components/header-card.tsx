@@ -11,7 +11,7 @@ const HeaderCard = () => {
         <Text style={styles.cardTitle}>Afternoon walk</Text>
 
         <View style={styles.cardFooterInfo}>
-          <icons.BlackClock />
+          <icons.GreyClock />
           <Text style={styles.mutedInfoText}>now</Text>
           <View style={styles.mutedDot} />
           <Text style={styles.mutedInfoText}>10mins</Text>
@@ -21,7 +21,7 @@ const HeaderCard = () => {
       </View>
 
       {/* state box */}
-      <BlurView intensity={24} style={styles.statsContainer}>
+      <BlurView intensity={0} style={styles.statsContainer}>
         <View style={styles.stats}>
           <Text style={styles.semiBoldMutedText}>IMPACT:</Text>
 

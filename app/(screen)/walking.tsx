@@ -51,8 +51,8 @@ const Walking = () => {
       <StatusBar barStyle="dark-content" backgroundColor="#4740CA" />
 
       {/* header */}
-      <TouchableOpacity onPress={() => {}} style={styles.headerContainer}>
-        <icons.LeftArrowBlack style={styles.headerIcon} />
+      <TouchableOpacity style={styles.headerContainer} onPress={() => {}}>
+        <icons.LeftArrowWhite />
       </TouchableOpacity>
 
       <ScrollView>
@@ -71,6 +71,8 @@ const Walking = () => {
         {/* footer */}
         <RouteSafety />
       </ScrollView>
+
+      {/* footer button */}
       <View style={styles.footerButtonContainer}>
         <CustomButton
           title="start walking"
@@ -87,20 +89,14 @@ export default Walking;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
   },
   //
   // header container
   headerContainer: {
     paddingTop: 17,
     paddingLeft: 15,
-    paddingBottom: 8,
     alignItems: "flex-start",
     backgroundColor: "#4740CA",
-  },
-  headerIcon: {
-    tintColor: "#fff",
-    color: "#fff",
   },
   //
   // footer button container

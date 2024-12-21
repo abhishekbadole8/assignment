@@ -65,6 +65,7 @@ import InteractionGuide from "../assets/icons/interaction-guide-icon.svg";
 import LeftArrowBlack from "../assets/icons/left-arrow-black.svg";
 
 // walking screen
+import LeftArrowWhite from "../assets/icons/left-arrow-white.svg";
 import SoundWave from "../assets/icons/SoundWave.svg";
 import NatureSound from "../assets/icons/nature-sounds.svg";
 import News from "../assets/icons/news.svg";
@@ -141,6 +142,7 @@ export const icons = {
   LeftArrowBlack,
 
   // walking screen
+  LeftArrowWhite,
   SoundWave,
   NatureSound,
   News,
