@@ -1,4 +1,11 @@
-import { View, TouchableOpacity, StyleSheet, StatusBar, Platform } from "react-native";
+import {
+  View,
+  TouchableOpacity,
+  StyleSheet,
+  StatusBar,
+  Platform,
+  ScrollView,
+} from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { icons } from "@/constants";
@@ -48,21 +55,22 @@ const Walking = () => {
         <icons.LeftArrowBlack style={styles.headerIcon} />
       </TouchableOpacity>
 
-      {/* Header Card */}
-      <HeaderCard />
+      <ScrollView>
+        {/* Header Card */}
+        <HeaderCard />
 
-      {/* Map */}
-      <MapCard />
+        {/* Map */}
+        <MapCard />
 
-      {/* Walking companion */}
-      <WalkingCompanion
-        walkingCompanion={walkingCompanion}
-        activeCompanion={activeCompanion}
-      />
+        {/* Walking companion */}
+        <WalkingCompanion
+          walkingCompanion={walkingCompanion}
+          activeCompanion={activeCompanion}
+        />
 
-      {/* footer */}
-      <RouteSafety />
-
+        {/* footer */}
+        <RouteSafety />
+      </ScrollView>
       <View style={styles.footerButtonContainer}>
         <CustomButton
           title="start walking"
@@ -106,15 +114,15 @@ const styles = StyleSheet.create({
 
     // shadow
     ...Platform.select({
-        ios: {
-          shadowColor: 'rgba(0, 0, 0, 0.15)',
-          shadowOffset: { width: 0, height: -4 },
-          shadowOpacity: 0.15,
-          shadowRadius: 24,
-        },
-        android: {
-          elevation: 8, // Adjust elevation to match the shadow appearance
-        },
-      }),
+      ios: {
+        shadowColor: "rgba(0, 0, 0, 0.15)",
+        shadowOffset: { width: 0, height: -4 },
+        shadowOpacity: 0.15,
+        shadowRadius: 24,
+      },
+      android: {
+        elevation: 8, // Adjust elevation to match the shadow appearance
+      },
+    }),
   },
 });
