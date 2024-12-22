@@ -1,9 +1,7 @@
 import {
-  View,
   TouchableOpacity,
   StyleSheet,
   StatusBar,
-  Platform,
   ScrollView,
 } from "react-native";
 import React from "react";
@@ -14,6 +12,7 @@ import HeaderCard from "@/components/walking/components/header-card";
 import WalkingCompanion from "@/components/walking/components/walking-companion";
 import MapCard from "@/components/walking/components/map-card";
 import CustomButton from "@/components/custom-button";
+import TaskButtonWrapper from "@/components/task-button-wrapper";
 
 interface WalkingCompanionItem {
   id: number;
@@ -73,13 +72,13 @@ const Walking = () => {
       </ScrollView>
 
       {/* footer button */}
-      <View style={styles.footerButtonContainer}>
+      <TaskButtonWrapper>
         <CustomButton
           title="start walking"
           handlePress={() => {}}
           containerStyles={{ width: "100%" }}
         />
-      </View>
+      </TaskButtonWrapper>
     </SafeAreaView>
   );
 };
@@ -99,26 +98,4 @@ const styles = StyleSheet.create({
     backgroundColor: "#4740CA",
   },
   //
-  // footer button container
-  footerButtonContainer: {
-    backgroundColor: "rgba(247, 247, 247, 1)",
-    position: "absolute",
-    bottom: 0,
-    width: "100%",
-    paddingVertical: 24,
-    paddingHorizontal: 28,
-
-    // shadow
-    ...Platform.select({
-      ios: {
-        shadowColor: "rgba(0, 0, 0, 0.15)",
-        shadowOffset: { width: 0, height: -4 },
-        shadowOpacity: 0.15,
-        shadowRadius: 24,
-      },
-      android: {
-        elevation: 8, // Adjust elevation to match the shadow appearance
-      },
-    }),
-  },
 });
