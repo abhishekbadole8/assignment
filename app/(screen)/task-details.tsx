@@ -53,7 +53,10 @@ const TaskDetails = () => {
         </View>
       </View>
 
-      <ScrollView style={styles.contentContainer}>
+      <ScrollView
+        style={styles.contentContainer}
+        contentContainerStyle={styles.scrollViewContent}
+      >
         {/* Goal Card */}
         <GoalCard />
 
@@ -61,13 +64,13 @@ const TaskDetails = () => {
         <ExpectedImpactCards />
       </ScrollView>
 
-      {/* <TaskButtonWrapper>
+      <TaskButtonWrapper>
         <CustomButton
           title="start walking"
           handlePress={() => {}}
           containerStyles={{ width: "100%" }}
         />
-      </TaskButtonWrapper> */}
+      </TaskButtonWrapper>
     </View>
   );
 };
@@ -131,5 +134,8 @@ const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
     padding: 16,
+  },
+  scrollViewContent: {
+    paddingBottom: 55,
   },
 });
