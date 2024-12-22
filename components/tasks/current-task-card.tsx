@@ -73,7 +73,7 @@ const CurrentTaskCard: React.FC<{
         </View>
 
         {/* button */}
-        <CustomButton title="start" handlePress={() => router.push('/(screen)/walking')} />
+        <CustomButton title="start" handlePress={() => router.push('/(screen)/task-details')} />
       </View>
 
       {/* corner tag */}
