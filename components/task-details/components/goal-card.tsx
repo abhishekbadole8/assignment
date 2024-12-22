@@ -9,6 +9,7 @@ const GoalCard = () => {
       <View style={styles.goalCardHeader}>
         <CustomText fontFamily="Gilroy-Bold">Goal</CustomText>
       </View>
+
       {/* Body */}
       <View style={styles.goalCardBody}>
         <CustomText fontFamily="Gilroy-Bold" fontSize={24} textAlign="center">
@@ -18,10 +19,12 @@ const GoalCard = () => {
           fontFamily="Gilroy-SemiBold"
           fontSize={12}
           textAlign="center"
+          color="#5F5F5F"
         >
           STEPS
         </CustomText>
       </View>
+
       {/* Footer  */}
       <View style={styles.goalCardFooter}>
         <CustomText
@@ -45,6 +48,7 @@ const styles = StyleSheet.create({
     borderWidth: 0.4,
     borderColor: "rgba(0, 0, 0, 0.5)",
     borderRadius: 12,
+    marginBottom: 16,
   },
   //
   // header

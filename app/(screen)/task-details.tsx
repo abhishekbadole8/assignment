@@ -1,8 +1,11 @@
-import { View, StyleSheet, StatusBar } from "react-native";
+import { View, StyleSheet, StatusBar, ScrollView } from "react-native";
 import React from "react";
 import { icons } from "@/constants";
 import CustomText from "@/components/custom-text";
 import GoalCard from "@/components/task-details/components/goal-card";
+import ExpectedImpactCards from "@/components/task-details/components/expected-impact-cards";
+import TaskButtonWrapper from "@/components/task-button-wrapper";
+import CustomButton from "@/components/custom-button";
 
 const TaskDetails = () => {
   return (
@@ -50,10 +53,21 @@ const TaskDetails = () => {
         </View>
       </View>
 
-      <View style={styles.contentContainer}>
+      <ScrollView style={styles.contentContainer}>
         {/* Goal Card */}
         <GoalCard />
-      </View>
+
+        {/* Expected Impact Card */}
+        <ExpectedImpactCards />
+      </ScrollView>
+
+      {/* <TaskButtonWrapper>
+        <CustomButton
+          title="start walking"
+          handlePress={() => {}}
+          containerStyles={{ width: "100%" }}
+        />
+      </TaskButtonWrapper> */}
     </View>
   );
 };
@@ -104,7 +118,6 @@ const styles = StyleSheet.create({
   //
   // weather block
   weatherBlock: {
-    // maxHeight:30,
     flexDirection: "row",
     alignItems: "center",
     gap: 4,
