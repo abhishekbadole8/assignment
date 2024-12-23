@@ -3,6 +3,7 @@ import {
   StyleSheet,
   StatusBar,
   ScrollView,
+  View,
 } from "react-native";
 import React, { useState } from "react";
 import { router } from "expo-router";
@@ -96,9 +97,14 @@ const Walking = () => {
       </ScrollView>
 
       {/* footer button */}
-      <TaskButtonWrapper>
+      <TaskButtonWrapper containerStyle={{ flexDirection: "row", gap: 16 }}>
+        {/* pause icon */}
+        <View style={styles.pauseWalkingIcon}>
+          <View style={styles.square} />
+        </View>
+
         <CustomButton
-          title="start walking"
+          title="pause walking"
           handlePress={() => {}}
           containerStyles={{ width: "100%" }}
         />
@@ -125,4 +131,18 @@ const styles = StyleSheet.create({
     backgroundColor: "#4740CA",
   },
   //
+  pauseWalkingIcon: {
+    borderRadius: 100,
+    borderWidth: 1,
+    borderColor: "#000000",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 13,
+  },
+  square: {
+    width: 14,
+    height: 14,
+    borderRadius: 2,
+    backgroundColor: "#000",
+  },
 });

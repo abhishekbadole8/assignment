@@ -1,12 +1,13 @@
 import React, { ReactNode } from "react";
-import { Platform, View, StyleSheet } from "react-native";
+import { Platform, View, StyleSheet, ViewStyle } from "react-native";
 
 interface TaskButtonWrapperProps {
   children: ReactNode;
+  containerStyle?: ViewStyle;
 }
 
-const TaskButtonWrapper: React.FC<TaskButtonWrapperProps> = ({ children }) => {
-  return <View style={styles.container}>{children}</View>;
+const TaskButtonWrapper: React.FC<TaskButtonWrapperProps> = ({ children, containerStyle }) => {
+  return <View style={[styles.container, containerStyle]}>{children}</View>;
 };
 
 export default TaskButtonWrapper;
