@@ -77,6 +77,10 @@ import FullscreenBlack from "../assets/icons/arrow_cross_black.svg";
 import Cup from "../assets/icons/cup.svg";
 import Tree from "../assets/icons/tree.svg";
 
+// task details
+import GirlWalking from "../assets/icons/girl-walking.svg";
+import Footprint from "../assets/icons/footprint.svg";
+
 export const icons = {
   QuickConsultationIcon,
   Send,
@@ -156,4 +160,8 @@ export const icons = {
   FullscreenBlack,
   Cup,
   Tree,
+
+  // task details
+  GirlWalking,
+  Footprint
 };

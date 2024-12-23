@@ -1,10 +1,12 @@
 import { icons } from "@/constants";
 import { Colors } from "@/constants/Colors";
-import { Stack } from "expo-router";
+import { router, Stack, useNavigation } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 
 const ScreenLayout = () => {
+  const navigation = useNavigation();
+
   return (
     <>
       <StatusBar backgroundColor="#000" style="light" />
@@ -30,9 +32,28 @@ const ScreenLayout = () => {
           }}
         />
         <Stack.Screen
-          name="walking"
+          name="task-tracker"
           options={{
             headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="task-details"
+          options={{
+            headerTitle: "",
+            headerShadowVisible: false,
+            headerLeft: () => (
+              <TouchableOpacity
+                onPress={() => navigation.goBack()}
+                style={styles.headerLeft}
+              >
+                <icons.LeftArrowWhite />
+              </TouchableOpacity>
+            ),
+            headerStyle: {
+              backgroundColor: "rgba(71, 64, 202, 1)", // #4740CA
+            },
+            headerTintColor: "#fff",
           }}
         />
       </Stack>
@@ -43,13 +64,6 @@ const ScreenLayout = () => {
 export default ScreenLayout;
 
 const styles = StyleSheet.create({
-  headerContainer: {
-    maxHeight: 49,
-    paddingTop: 17,
-    // paddingLeft: 15,
-    paddingBottom: 8,
-    // alignItems:"flex-start",
-    borderWidth: 1,
-  },
-  headerIcon: {},
+  // header left
+  headerLeft: {},
 });

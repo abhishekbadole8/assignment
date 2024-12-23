@@ -19,6 +19,7 @@ interface CustomTextProps extends TextProps {
     | "900";
   textAlign?: "auto" | "left" | "right" | "center" | "justify";
   lineHeight?: number;
+  letterSpacing?: number;
   style?: StyleProp<TextStyle>;
 }
 
@@ -30,6 +31,7 @@ const CustomText: React.FC<CustomTextProps> = ({
   fontWeight = "normal",
   textAlign = "auto",
   lineHeight,
+  letterSpacing,
   style,
   ...props
 }) => {
