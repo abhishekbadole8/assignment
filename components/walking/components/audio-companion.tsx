@@ -1,41 +1,44 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { icons } from "@/constants";
 
-interface WalkingCompanionItem {
+interface audioCompanionItem {
   id: number;
   title: string;
   subtitle: string;
   icon: string;
 }
 
-interface WalkingCompanionProps {
-  walkingCompanion: WalkingCompanionItem[];
-  activeCompanion: number;
+interface audioCompanionProps {
+  audioCompanionItems: audioCompanionItem[];
+  activeCompanionId: number;
+  handleAudioCompanion: (id: number) => void;
 }
 
-const WalkingCompanion = ({
-  walkingCompanion,
-  activeCompanion,
-}: WalkingCompanionProps) => {
+const AudioCompanion = ({
+  audioCompanionItems,
+  activeCompanionId,
+  handleAudioCompanion,
+}: audioCompanionProps) => {
   return (
     <View style={styles.walkingCompanionContainer}>
-      <Text style={styles.walkingCompanionTitle}>WALKING COMPANION</Text>
+      <Text style={styles.walkingCompanionTitle}>AUDIO COMPANION</Text>
 
       <View style={styles.walkingCompanion}>
-        {walkingCompanion.map((item) => {
-          const isActive = activeCompanion === item.id;
+        {audioCompanionItems.map((item) => {
+          const isActive = activeCompanionId === item.id;
 
           return (
-            <View
+            <TouchableOpacity
               style={[styles.companionList, isActive ? styles.activeList : ""]}
               key={item.id}
+              onPress={() => handleAudioCompanion(item.id)}
             >
               <View style={styles.companion}>
                 <item.icon />
                 <View style={styles.companionTextContainer}>
                   <Text style={styles.companionTitle}>{item.title}</Text>
-                  {item.id === 3 ? (
+                  {isActive ? (
                     <View style={styles.companionSubTitlePlaylist}>
                       <Text
                         style={[
@@ -66,7 +69,7 @@ const WalkingCompanion = ({
               ) : (
                 <icons.Play />
               )}
-            </View>
+            </TouchableOpacity>
           );
         })}
       </View>
@@ -74,7 +77,7 @@ const WalkingCompanion = ({
   );
 };
 
-export default WalkingCompanion;
+export default AudioCompanion;
 
 const styles = StyleSheet.create({
   // walking companion

@@ -5,54 +5,59 @@ import {
   ScrollView,
 } from "react-native";
 import React, { useState } from "react";
+import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { icons } from "@/constants";
 import RouteSafety from "@/components/walking/components/route-safety";
-import WalkingCompanion from "@/components/walking/components/walking-companion";
 import MapCard from "@/components/walking/components/map-card";
 import CustomButton from "@/components/custom-button";
 import TaskButtonWrapper from "@/components/task-button-wrapper";
 import TaskCommonHeaderCard from "@/components/task-common-header-card";
-import { router } from "expo-router";
+import AudioCompanion from "@/components/walking/components/audio-companion";
 
 enum TAB_BUTTON {
   STEPS_MODE = "STEPS_MODE",
   MAP_MODE = "MAP_MODE",
 }
-interface WalkingCompanionItem {
+interface audioCompanionItem {
   id: number;
   title: string;
   subtitle: string;
   icon: string;
 }
 
-const walkingCompanion: WalkingCompanionItem[] = [
+const audioCompanionItems: audioCompanionItem[] = [
   {
     id: 1,
+    title: "Your playlist",
+    subtitle: "custom",
+    icon: icons.Music,
+  },
+  {
+    id: 2,
     title: "News update",
     subtitle: "5mins",
     icon: icons.News,
   },
   {
-    id: 2,
+    id: 3,
     title: "Nature sounds",
     subtitle: "continuous",
     icon: icons.NatureSound,
   },
-  {
-    id: 3,
-    title: "Your playlist",
-    subtitle: "custom",
-    icon: icons.Music,
-  },
 ];
 
 const Walking = () => {
-  const [activeCompanion, setActiveCompanion] = React.useState(3);
+  const [activeCompanionId, setActiveCompanionId] = React.useState(1);
   const [currentTab, setCurrentTab] = useState(TAB_BUTTON.MAP_MODE);
 
   const handleTabButtonPress = (tab: TAB_BUTTON) => {
     setCurrentTab(tab);
+  };
+
+  // audio companion
+  const handleAudioCompanion = (id: number) => {
+    setActiveCompanionId(id);
   };
 
   return (
@@ -70,17 +75,18 @@ const Walking = () => {
       {/* Header */}
       <TaskCommonHeaderCard />
 
-      {/* Map */}
-      <MapCard
-        activeTab={currentTab}
-        handleTabButtonPress={handleTabButtonPress}
-      />
-
       <ScrollView>
+        {/* Map */}
+        <MapCard
+          activeTab={currentTab}
+          handleTabButtonPress={handleTabButtonPress}
+        />
+
         {/* Walking companion */}
-        <WalkingCompanion
-          walkingCompanion={walkingCompanion}
-          activeCompanion={activeCompanion}
+        <AudioCompanion
+          audioCompanionItems={audioCompanionItems}
+          activeCompanionId={activeCompanionId}
+          handleAudioCompanion={handleAudioCompanion}
         />
 
         {/* footer */}
