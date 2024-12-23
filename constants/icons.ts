@@ -79,6 +79,7 @@ import Tree from "../assets/icons/tree.svg";
 
 // task details
 import GirlWalking from "../assets/icons/girl-walking.svg";
+import Footprint from "../assets/icons/footprint.svg";
 
 export const icons = {
   QuickConsultationIcon,
@@ -161,5 +162,6 @@ export const icons = {
   Tree,
 
   // task details
-  GirlWalking
+  GirlWalking,
+  Footprint
 };

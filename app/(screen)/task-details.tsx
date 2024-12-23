@@ -6,8 +6,12 @@ import GoalCard from "@/components/task-details/components/goal-card";
 import ExpectedImpactCards from "@/components/task-details/components/expected-impact-cards";
 import TaskButtonWrapper from "@/components/task-button-wrapper";
 import CustomButton from "@/components/custom-button";
+// import FootprintPill from "@/components/task-details/components/footprint-score-pill";
 
 const TaskDetails = () => {
+  const total_footprint = 8000;
+  const covered_footprint = 2000;
+
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#4740CA" />
@@ -64,6 +68,13 @@ const TaskDetails = () => {
         <ExpectedImpactCards />
       </ScrollView>
 
+      {/* Footprint pill */}
+      {/* <FootprintPill
+        covered_footprint={covered_footprint}
+        total_footprint={total_footprint}
+      /> */}
+
+      {/* Start walking button */}
       <TaskButtonWrapper>
         <CustomButton
           title="start walking"
@@ -136,6 +147,6 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   scrollViewContent: {
-    paddingBottom: 55,
+    paddingBottom: 35,
   },
 });
