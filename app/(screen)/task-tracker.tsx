@@ -8,12 +8,14 @@ import React, { useState } from "react";
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { icons } from "@/constants";
-import RouteSafety from "@/components/walking/components/route-safety";
+
+// components
 import MapCard from "@/components/walking/components/map-card";
 import CustomButton from "@/components/custom-button";
 import TaskButtonWrapper from "@/components/task-button-wrapper";
 import TaskCommonHeaderCard from "@/components/task-common-header-card";
 import AudioCompanion from "@/components/walking/components/audio-companion";
+import WhatsNearby from "@/components/walking/components/whats-nearby";
 
 enum TAB_BUTTON {
   STEPS_MODE = "STEPS_MODE",
@@ -72,10 +74,10 @@ const Walking = () => {
         <icons.LeftArrowWhite />
       </TouchableOpacity>
 
-      {/* Header */}
+      {/* Header - common task card */}
       <TaskCommonHeaderCard />
 
-      <ScrollView>
+      <ScrollView contentContainerStyle={styles.scrollContent}>
         {/* Map */}
         <MapCard
           activeTab={currentTab}
@@ -90,7 +92,7 @@ const Walking = () => {
         />
 
         {/* footer */}
-        <RouteSafety />
+        <WhatsNearby />
       </ScrollView>
 
       {/* footer button */}
@@ -112,6 +114,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   //
+  scrollContent: {
+    paddingBottom: 90,
+  },
   // header container
   headerContainer: {
     paddingTop: 17,

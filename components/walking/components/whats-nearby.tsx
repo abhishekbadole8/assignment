@@ -2,23 +2,23 @@ import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import { icons } from "@/constants";
 
-const safeties: string[] = [
+const nearbyItems: string[] = [
   "Well-lit pedestrian paths",
   "Busy intersection at Krishna Street - use crossing",
   "Security camera along main route",
   "Emergency contacts accessible",
 ];
 
-const RouteSafety = () => {
+const WhatsNearby = () => {
   return (
     <View style={styles.interactionContainer}>
       <View style={styles.interactionHeader}>
         <icons.RouteSafety />
-        <Text style={styles.interactionTitle}>Route safety</Text>
+        <Text style={styles.interactionTitle}>What’s nearby</Text>
       </View>
 
       <View style={styles.safetyList}>
-        {safeties.map((item, index) => (
+        {nearbyItems.map((item, index) => (
           <View style={styles.safety} key={index}>
             <View style={styles.bulletPoints} />
             <Text style={styles.interactionText}>{item}</Text>
@@ -29,14 +29,13 @@ const RouteSafety = () => {
   );
 };
 
-export default RouteSafety;
+export default WhatsNearby;
 
 const styles = StyleSheet.create({
   interactionContainer: {
     paddingVertical: 14,
     paddingHorizontal: 16,
-    backgroundColor: "rgba(238, 238, 238, 1)",
-    marginBottom: 180,
+    backgroundColor: "rgba(238, 238, 238, 1)", // #EEEEEE
   },
   interactionHeader: {
     marginBottom: 12,
