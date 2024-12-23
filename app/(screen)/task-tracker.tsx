@@ -4,16 +4,20 @@ import {
   StatusBar,
   ScrollView,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { icons } from "@/constants";
 import RouteSafety from "@/components/walking/components/route-safety";
-import HeaderCard from "@/components/walking/components/header-card";
 import WalkingCompanion from "@/components/walking/components/walking-companion";
 import MapCard from "@/components/walking/components/map-card";
 import CustomButton from "@/components/custom-button";
 import TaskButtonWrapper from "@/components/task-button-wrapper";
+import TaskCommonHeaderCard from "@/components/task-common-header-card";
 
+enum TAB_BUTTON {
+  STEPS_MODE = "STEPS_MODE",
+  MAP_MODE = "MAP_MODE",
+}
 interface WalkingCompanionItem {
   id: number;
   title: string;
@@ -44,6 +48,7 @@ const walkingCompanion: WalkingCompanionItem[] = [
 
 const Walking = () => {
   const [activeCompanion, setActiveCompanion] = React.useState(3);
+  const [currentTab, setCurrentTab] = useState(TAB_BUTTON.MAP_MODE);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -54,13 +59,13 @@ const Walking = () => {
         <icons.LeftArrowWhite />
       </TouchableOpacity>
 
+      {/* Header */}
+      <TaskCommonHeaderCard />
+
+      {/* Map */}
+      <MapCard activeTab={currentTab} />
+
       <ScrollView>
-        {/* Header Card */}
-        <HeaderCard />
-
-        {/* Map */}
-        <MapCard />
-
         {/* Walking companion */}
         <WalkingCompanion
           walkingCompanion={walkingCompanion}

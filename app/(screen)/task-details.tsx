@@ -6,6 +6,7 @@ import GoalCard from "@/components/task-details/components/goal-card";
 import ExpectedImpactCards from "@/components/task-details/components/expected-impact-cards";
 import TaskButtonWrapper from "@/components/task-button-wrapper";
 import CustomButton from "@/components/custom-button";
+import { router } from "expo-router";
 // import FootprintPill from "@/components/task-details/components/footprint-score-pill";
 
 const TaskDetails = () => {
@@ -78,7 +79,7 @@ const TaskDetails = () => {
       <TaskButtonWrapper>
         <CustomButton
           title="start walking"
-          handlePress={() => {}}
+          handlePress={() => router.push('/(screen)/task-tracker')}
           containerStyles={{ width: "100%" }}
         />
       </TaskButtonWrapper>

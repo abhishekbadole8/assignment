@@ -1,9 +1,6 @@
 import { View, StyleSheet } from "react-native";
 import React from "react";
-import MapView, { Marker } from "react-native-maps";
-import { icons } from "@/constants";
-
-const map_height = 208;
+import MapView from "react-native-maps";
 
 const MapCardBody = () => {
   return (
@@ -17,20 +14,8 @@ const MapCardBody = () => {
           longitudeDelta: 0.0421,
         }}
       >
-        <Marker
-          coordinate={{
-            latitude: 37.78825,
-            longitude: -122.4324,
-          }}
-          title="My Location"
-          description="This is a marker in San Francisco"
-        />
+       
       </MapView>
-
-      {/* full screen icon */}
-      <View style={{ position: "absolute", right: 10, top: 10 }}>
-        <icons.FullscreenBlack />
-      </View>
     </View>
   );
 };
@@ -39,7 +24,8 @@ export default MapCardBody;
 
 const styles = StyleSheet.create({
   mapBody: {
-    height: map_height,
+    width:'100%',
+
   },
   map: {
     width: "100%",
