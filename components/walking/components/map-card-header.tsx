@@ -8,16 +8,20 @@ enum TAB_BUTTON {
 }
 
 interface MapCardHeaderProps {
-    activeTab: TAB_BUTTON; 
-  }
+  activeTab: TAB_BUTTON;
+  handleTabButtonPress: (tab: TAB_BUTTON) => void;
+}
 
-const MapCardHeader: React.FC<MapCardHeaderProps> = ({ activeTab }) => {
+const MapCardHeader: React.FC<MapCardHeaderProps> = ({
+  activeTab,
+  handleTabButtonPress,
+}) => {
   return (
     <View style={styles.tabContainer}>
       <View style={styles.tabWrapper}>
         <TabButton
           title="steps mode"
-          handleTabButton={() => {}}
+          handleTabButton={() => handleTabButtonPress(TAB_BUTTON.STEPS_MODE)}
           isActive={activeTab === TAB_BUTTON.STEPS_MODE}
         />
 
@@ -26,7 +30,7 @@ const MapCardHeader: React.FC<MapCardHeaderProps> = ({ activeTab }) => {
 
         <TabButton
           title="map mode"
-          handleTabButton={() => {}}
+          handleTabButton={() => handleTabButtonPress(TAB_BUTTON.MAP_MODE)}
           isActive={activeTab === TAB_BUTTON.MAP_MODE}
         />
       </View>
@@ -46,7 +50,7 @@ const styles = StyleSheet.create({
     // width: "100%",
     position: "absolute",
     top: 0,
-    zIndex:1
+    zIndex: 1,
   },
   tabWrapper: {
     backgroundColor: "rgba(0, 0, 0, 1)",

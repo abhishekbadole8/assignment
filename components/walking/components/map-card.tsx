@@ -13,19 +13,29 @@ enum TAB_BUTTON {
 
 interface MapCardProps {
   activeTab: TAB_BUTTON;
+  handleTabButtonPress: (tab: TAB_BUTTON) => void;
 }
 
-const MapCard: React.FC<MapCardProps> = ({ activeTab }) => {
+const MapCard: React.FC<MapCardProps> = ({
+  activeTab,
+  handleTabButtonPress,
+}) => {
   return (
     <View style={styles.mapContainer}>
       {/* Header - overflow */}
-      <MapCardHeader activeTab={activeTab} />
+      <MapCardHeader
+        activeTab={activeTab}
+        handleTabButtonPress={handleTabButtonPress}
+      />
+
+      {/* Circular progress */}
+      {activeTab === TAB_BUTTON.STEPS_MODE && <MapCardBody />}
 
       {/* Map */}
-      <MapCardBody />
+      {activeTab === TAB_BUTTON.MAP_MODE && <MapCardBody />}
 
       {/* Footer - overflow */}
-      <MapCardFooter />
+      <MapCardFooter isMapTab={activeTab === TAB_BUTTON.MAP_MODE}/>
     </View>
   );
 };

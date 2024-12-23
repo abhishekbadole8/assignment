@@ -13,6 +13,7 @@ import MapCard from "@/components/walking/components/map-card";
 import CustomButton from "@/components/custom-button";
 import TaskButtonWrapper from "@/components/task-button-wrapper";
 import TaskCommonHeaderCard from "@/components/task-common-header-card";
+import { router } from "expo-router";
 
 enum TAB_BUTTON {
   STEPS_MODE = "STEPS_MODE",
@@ -50,12 +51,19 @@ const Walking = () => {
   const [activeCompanion, setActiveCompanion] = React.useState(3);
   const [currentTab, setCurrentTab] = useState(TAB_BUTTON.MAP_MODE);
 
+  const handleTabButtonPress = (tab: TAB_BUTTON) => {
+    setCurrentTab(tab);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#4740CA" />
 
       {/* header */}
-      <TouchableOpacity style={styles.headerContainer} onPress={() => {}}>
+      <TouchableOpacity
+        style={styles.headerContainer}
+        onPress={() => router.back()}
+      >
         <icons.LeftArrowWhite />
       </TouchableOpacity>
 
@@ -63,7 +71,10 @@ const Walking = () => {
       <TaskCommonHeaderCard />
 
       {/* Map */}
-      <MapCard activeTab={currentTab} />
+      <MapCard
+        activeTab={currentTab}
+        handleTabButtonPress={handleTabButtonPress}
+      />
 
       <ScrollView>
         {/* Walking companion */}

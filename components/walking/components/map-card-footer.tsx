@@ -31,10 +31,14 @@ const details: Detail[] = [
   },
 ];
 
-const MapCardFooter = () => {
+const MapCardFooter = ({ isMapTab }: { isMapTab: boolean }) => {
+  const filteredDetails = !isMapTab
+    ? details.filter((detail) => detail.id !== 1)
+    : details;
+
   return (
     <View style={styles.mapFooterContainer}>
-      {details.map((detail, index) => (
+      {filteredDetails.map((detail, index) => (
         <View
           key={index}
           style={[
