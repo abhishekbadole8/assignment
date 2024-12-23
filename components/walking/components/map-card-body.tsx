@@ -13,9 +13,7 @@ const MapCardBody = () => {
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}
-      >
-       
-      </MapView>
+      />
     </View>
   );
 };
@@ -24,8 +22,7 @@ export default MapCardBody;
 
 const styles = StyleSheet.create({
   mapBody: {
-    width:'100%',
-
+    width: "100%",
   },
   map: {
     width: "100%",

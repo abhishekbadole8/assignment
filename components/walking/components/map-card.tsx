@@ -1,8 +1,11 @@
 import { View, StyleSheet } from "react-native";
 import React from "react";
+
+// components
 import MapCardFooter from "./map-card-footer";
 import MapCardHeader from "./map-card-header";
 import MapCardBody from "./map-card-body";
+import MapCircularProgress from "./map-circular-progress";
 
 const MAP_CARD_HEIGHT = 368;
 
@@ -20,6 +23,12 @@ const MapCard: React.FC<MapCardProps> = ({
   activeTab,
   handleTabButtonPress,
 }) => {
+  const total_footprint = 8000;
+  const covered_footprint = 1689;
+
+  const score = Math.round((covered_footprint / total_footprint) * 100);
+console.log(score);
+
   return (
     <View style={styles.mapContainer}>
       {/* Header - overflow */}
@@ -29,13 +38,13 @@ const MapCard: React.FC<MapCardProps> = ({
       />
 
       {/* Circular progress */}
-      {activeTab === TAB_BUTTON.STEPS_MODE && <MapCardBody />}
+      {activeTab === TAB_BUTTON.STEPS_MODE && <MapCircularProgress score={score}/>}
 
       {/* Map */}
       {activeTab === TAB_BUTTON.MAP_MODE && <MapCardBody />}
 
       {/* Footer - overflow */}
-      <MapCardFooter isMapTab={activeTab === TAB_BUTTON.MAP_MODE}/>
+      <MapCardFooter isMapTab={activeTab === TAB_BUTTON.MAP_MODE} />
     </View>
   );
 };

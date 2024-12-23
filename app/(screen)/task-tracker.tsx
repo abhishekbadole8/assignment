@@ -50,7 +50,7 @@ const audioCompanionItems: audioCompanionItem[] = [
   },
 ];
 
-const Walking = () => {
+const TaskTracker = () => {
   const [activeCompanionId, setActiveCompanionId] = React.useState(1);
   const [currentTab, setCurrentTab] = useState(TAB_BUTTON.MAP_MODE);
 
@@ -113,7 +113,7 @@ const Walking = () => {
   );
 };
 
-export default Walking;
+export default TaskTracker;
 
 const styles = StyleSheet.create({
   container: {

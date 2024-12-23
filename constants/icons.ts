@@ -81,6 +81,9 @@ import Tree from "../assets/icons/tree.svg";
 import GirlWalking from "../assets/icons/girl-walking.svg";
 import Footprint from "../assets/icons/footprint.svg";
 
+// task tracker
+import FootprintBlack from "../assets/icons/footprint-black.svg";
+
 export const icons = {
   QuickConsultationIcon,
   Send,
@@ -163,5 +166,8 @@ export const icons = {
 
   // task details
   GirlWalking,
-  Footprint
+  Footprint,
+
+  // task tracker
+  FootprintBlack
 };
